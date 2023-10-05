@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        font_color: '#FFFFFF',
+        'font-color': '#FFFFFF',
         primary: '#A58363',
-        primary_light: '#C7A98D',
-        pripmary_drak: '#664A30',
-        text_yellow: '#FFC500',
+        'primary-light': '#C7A98D',
+        'primary-dark': '#664A30',
+        'text-yellow': '#FFC500',
       },
       fontFamily: {
         main: ['Coustard', 'cursive'],
