@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import Logo from './Icons/Logo';
+import Logo from './icons/Logo';
 import MenuItem from './MenuItem';
-import CharacterIcon from './Icons/CharactersIcon';
+import CharacterIcon from './icons/CharactersIcon';
 
 export default function NavBar() {
   return (
@@ -13,9 +13,6 @@ export default function NavBar() {
       </div>
       <div className="flex flex-col">
         <MenuItem url="characters" icon={<CharacterIcon />} text="Characters" />
-        {/* <MenuItem url="ships" icon={Ships} text="Ships" />
-        <MenuItem url="races" icon={Races} text="Races" />
-        <MenuItem url="planets" icon={Planets} text="Planets" /> */}
       </div>
     </div>
   );

@@ -9,8 +9,8 @@ import {
 
 import './main.css';
 import Root from './components/Root';
-import Home from './components/Pages/Home';
-import Characters from './components/Pages/Characters';
+import Home from './components/pages/Home';
+import Characters from './components/pages/Characters';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

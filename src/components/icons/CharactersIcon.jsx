@@ -1,7 +1,7 @@
 export default function CharacterIcon() {
   return (
     <svg
-      className="text-white group-hover:text-yellow-400 transition-colors duration-[400ms]"
+      className="text-white group-hover:text-[#FFC500] transition-colors duration-[400ms]"
       width="31"
       height="31"
       viewBox="0 0 31 31"
