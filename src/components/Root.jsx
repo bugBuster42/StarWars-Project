@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 export default function Root() {
   return (
     <>
-      <div className="bg-[url('/Background.png')] bg-cover bg-center h-[100vh]">
+      <div className="bg-[url('/background.png')] bg-cover bg-center h-screen">
         <NavBar />
         <Outlet />
       </div>
