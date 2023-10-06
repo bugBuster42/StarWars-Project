@@ -1,7 +1,7 @@
 export default function Smallcard({ image, name, role }) {
   return (
     <>
-      <div className="figurcaption">
+      <div className="clip-path-polygon">
         <figure className="bg-gradient-to-r from-primary-light to-primary-dark w-72 h-auto">
           <img
             className="shadow-lg w-72 h-80 object-cover"
