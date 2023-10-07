@@ -1,5 +1,17 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function LinkColor(props) {
-  return <Link className="text-white m-2" {...props} />;
+  const customProps = Object.assign({}, props);
+  const className = props.className;
+  delete customProps.className;
+  return (
+    <NavLink
+      className={({ isActive }) => {
+        return isActive
+          ? `${className} text-[#FFC500] m-2`
+          : `${className} text-white m-2`;
+      }}
+      {...customProps}
+    />
+  );
 }

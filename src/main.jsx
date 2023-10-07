@@ -11,6 +11,9 @@ import './main.css';
 import Root from './components/Root';
 import Home from './components/pages/Home';
 import Characters from './components/pages/Characters';
+import Ships from './components/pages/Ships';
+import Species from './components/pages/Species';
+import Planets from './components/pages/Planets';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +21,9 @@ const router = createBrowserRouter(
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="characters" element={<Characters />} />
+        {/* <Route path="ships" element={<Ships />} /> */}
+        {/* <Route path="species" element={<Species />} /> */}
+        {/* <Route path="planets" element={<Planets />} /> */}
       </Route>
     </>,
   ),
