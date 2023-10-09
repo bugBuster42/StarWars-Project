@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    overflow: hidden;
+  }
+}
+
 @layer utilities {
   .clip-path-polygon {
     clip-path: polygon(
