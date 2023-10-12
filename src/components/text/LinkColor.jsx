@@ -6,8 +6,8 @@ export default function LinkColor(props) {
       {...props}
       className={({ isActive }) => {
         return isActive
-          ? `${props.className} text-[#FFC500] m-2`
-          : `${props.className} text-white m-2`;
+          ? `${props.className} m-2 text-[#FFC500]`
+          : `${props.className} m-2 text-white`;
       }}
     />
   );
