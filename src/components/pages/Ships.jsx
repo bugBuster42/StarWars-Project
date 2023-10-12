@@ -45,8 +45,6 @@ export default function Ships() {
   for (let k = 1; k <= Math.ceil(pages); k++) {
     numberPage.push(k);
   }
-  console.log({ numberPage });
-  console.log({ pages });
 
   return (
     <>
