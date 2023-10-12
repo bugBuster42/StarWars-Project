@@ -32,7 +32,7 @@ export default function CardDetailCharacter({ character }) {
                     alt="character"
                     className="h-52 w-40 z-10 object-cover"
                   />
-                  <div className="flex flex-col items-center leading-10 text-font-color font-test font-medium text-2xl">
+                  <div className="flex flex-col items-center z-10 leading-10 text-font-color font-test font-medium text-xl">
                     <p className="uppercase">{name}</p>
                     <div className="flex flex-row space-x-8">
                       <div className="flex flex-col">
@@ -75,11 +75,9 @@ export default function CardDetailCharacter({ character }) {
               </div>
               <div className="absolute z-10 h-full w-full top-0 right-0 bg-primary/20 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div className="flex min-h-full flex-col items-center justify-center">
-                  <p className="">planete</p>
-                  <p className="">vehicule</p>
-                  <p className="">vehicule</p>
-                  <p className="">vaisseau</p>
-                  <p className="">vaisseau</p>
+                  <p className="">planet</p>
+                  <p className="">vehicle</p>
+                  <p className="">starship</p>
                   <button className="">Read More</button>
                 </div>
               </div>

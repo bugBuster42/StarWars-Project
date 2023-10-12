@@ -3,7 +3,6 @@ import CardDetailPlanet from './components/CardDetailPlanet';
 import CardDetailSpecie from './components/CardDetailSpecie';
 import CardDetailStarship from './components/CardDetailStarship';
 import CardDetailVehicle from './components/CardDetailVehicle';
-import Planet from './pages/Planet';
 
 function App() {
   const character = {
@@ -61,12 +60,11 @@ function App() {
 
   return (
     <>
-      {/* <Planet/> */}
       <CardDetailCharacter character={character} />
-      {/* <CardDetailSpecie specie={specie}/>
-      <CardDetailStarship starship={starship}/>
-      <CardDetailPlanet planet={planet}/> */}
-      {/* <CardDetailVehicle /> */}
+      <CardDetailPlanet planet={planet} />
+      <CardDetailStarship starship={starship} />
+      <CardDetailSpecie specie={specie} />
+      <CardDetailVehicle />
     </>
   );
 }
