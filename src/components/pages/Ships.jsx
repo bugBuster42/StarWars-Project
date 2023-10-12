@@ -21,15 +21,16 @@ export default function Ships() {
         setShips((prev) => {
           return [...prev, data.results];
         });
-        for (let j = 1; j <= data.results.length; j++) {
+        setPages(data.count / 10);
+        for (let j = 0; j <= data.results.length; j++) {
+          let number1 = data.results[j].url[32];
+          let number2 = parseInt(data.results[j].url[33], 10);
+          let number = number1 + (Number.isInteger(number2) ? number2 : '');
           setImage((prev) => {
-            let data = `https://starwars-visualguide.com/assets/img/starships/${
-              j * page
-            }.jpg`;
+            let data = `https://starwars-visualguide.com/assets/img/starships/${number}.jpg`;
             return [...prev, data];
           });
         }
-        setPages(data.count / 10);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -46,6 +47,7 @@ export default function Ships() {
     numberPage.push(k);
   }
 
+  console.log({ image });
   return (
     <>
       <div className="px-32 pt-36">
@@ -64,7 +66,6 @@ export default function Ships() {
           </div>
         </div>
 
-        {console.log({ image })}
         {ships.length === page - 1 ? (
           ''
         ) : (
