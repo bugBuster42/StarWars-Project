@@ -1,13 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function HomeScrollingText() {
-  useEffect(() => {
-    const element = document.querySelector('.scroll-text-animation');
+  const element = useRef(null);
 
+  useEffect(() => {
     function restartAnimation() {
-      element.classList.remove('scroll-text-animation');
-      void element.offsetWidth;
-      element.classList.add('scroll-text-animation');
+      element.current.classList.remove('scroll-text-animation');
+      void element.current.offsetWidth;
+      element.current.classList.add('scroll-text-animation');
     }
 
     const interval = setInterval(restartAnimation, 45000);
@@ -16,9 +16,13 @@ export default function HomeScrollingText() {
       clearInterval(interval);
     };
   }, []);
+
   return (
     <div className="relative overflow-hidden h-[36vh] perspective fade-text">
-      <div className="absolute top-0 left-0 right-0 bottom-0 scroll-text-animation">
+      <div
+        ref={element}
+        className="absolute top-0 left-0 right-0 bottom-0 scroll-text-animation"
+      >
         <div className="text-[#FFC500] text-4xl font-bold text-justify w-3/5 mx-auto leading-loose">
           <h1 className="text-center">WELCOME TO THE STAR WARS ENCYCLOPEDIA</h1>
           <p>
