@@ -1,4 +1,4 @@
-export default function ImageWithFallback({ fallback, src, name }) {
+export default function GetImage({ fallback, src, name }) {
   return (
     <img
       src={src}

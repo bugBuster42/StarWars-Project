@@ -11,7 +11,7 @@ export default function Ships() {
 
   useEffect(() => {
     const controller = new AbortController();
-    let url = `https://swapi.dev/api/starships/?page=${activePage}`;
+    const url = `https://swapi.dev/api/starships/?page=${activePage}`;
 
     setLoading(true);
     getInfo(url, controller)
