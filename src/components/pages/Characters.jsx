@@ -1,9 +1,8 @@
-import Title from '../text/Title';
-
+import CharacterScrollingCard from '../CharacterScrollingCard';
 export default function Characters() {
   return (
     <>
-      <Title>Characters</Title>
+      <CharacterScrollingCard />
     </>
   );
 }

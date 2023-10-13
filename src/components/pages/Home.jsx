@@ -1,4 +1,3 @@
-import Title from '../text/Title';
 import HomeScrollingText from '../HomeScrollingText';
 import SmallCard from '../SmallCard';
 

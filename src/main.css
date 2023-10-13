@@ -30,8 +30,12 @@
   .scroll-text-animation {
     animation: scroll 300s linear;
   }
+
   .perspective {
     perspective: 350px;
+  }
+  .cards-perspective {
+    transform: perspective(350px) rotateX(35deg);
   }
 
   @keyframes scroll {
@@ -44,6 +48,7 @@
       transform: translateZ(-2500px) rotateX(36deg);
     }
   }
+
   .fade-text::before,
   .fade-text::after {
     content: '';
@@ -64,5 +69,9 @@
     bottom: 0;
     height: 10px;
     background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }
