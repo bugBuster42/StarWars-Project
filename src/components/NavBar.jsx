@@ -8,7 +8,7 @@ import PlanetIcon from './icons/PlanetIcon';
 
 export default function NavBar() {
   return (
-    <div className="absolute z-10 flex w-full justify-between pr-4 pt-5">
+    <div className="absolute top-0 z-10 flex w-full justify-between pr-4 pt-5">
       <div>
         <Link to="/">
           <Logo />
