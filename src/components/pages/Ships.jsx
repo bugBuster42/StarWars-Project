@@ -5,31 +5,24 @@ import PaginationButton from '../PaginationButton';
 
 export default function Ships() {
   const [ships, setShips] = useState([]);
-  const [image, setImage] = useState([]);
-  const [page, setPage] = useState(1);
   const [activePage, setActivePage] = useState(1);
-  const [pages, setPages] = useState([]);
-
-  const numberPage = [];
+  const [pages, setPages] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
-    let url = `https://swapi.dev/api/starships/?page=${page}`;
+    let url = `https://swapi.dev/api/starships/?page=${activePage}`;
 
+    setLoading(true);
     getInfo(url, controller)
       .then((data) => {
         setShips((prev) => {
-          return [...prev, data.results];
+          prev[activePage - 1] = data.results;
+          return prev;
         });
-        setPages(data.count / 10);
-        for (let j = 0; j <= data.results.length; j++) {
-          let number1 = data.results[j].url[32];
-          let number2 = parseInt(data.results[j].url[33], 10);
-          let number = number1 + (Number.isInteger(number2) ? number2 : '');
-          setImage((prev) => {
-            let data = `https://starwars-visualguide.com/assets/img/starships/${number}.jpg`;
-            return [...prev, data];
-          });
+        setLoading(false);
+        if (pages === 1) {
+          setPages(Math.ceil(data.count / 10));
         }
       })
       .catch((error) => {
@@ -39,42 +32,25 @@ export default function Ships() {
     return () => {
       controller.abort();
     };
-  }, [page]);
+  }, [activePage]);
 
-  useEffect(() => {}, []);
-
-  for (let k = 1; k <= Math.ceil(pages); k++) {
-    numberPage.push(k);
-  }
-
-  console.log({ image });
   return (
     <>
       <div className="px-32 pt-36">
         <div className="flex justify-end pb-5">
           <div className="flex gap-2">
-            {numberPage.map((pageNumber, index) => (
+            {new Array(pages).fill().map((a, index) => (
               <PaginationButton
                 key={index}
                 onClick={() => {
-                  setActivePage(pageNumber);
-                  setPage(pageNumber);
+                  setActivePage(index + 1);
                 }}
-                isActive={activePage === pageNumber}
+                isActive={activePage === index + 1}
               />
             ))}
           </div>
         </div>
-
-        {ships.length === page - 1 ? (
-          ''
-        ) : (
-          <ShipContent
-            ships={ships[page - 1]}
-            image={image}
-            numberPage={page}
-          />
-        )}
+        {loading ? null : <ShipContent ships={ships[activePage - 1]} />}
       </div>
     </>
   );
