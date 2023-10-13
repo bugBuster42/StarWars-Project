@@ -18,26 +18,30 @@ export default function CharacterScrollingCard() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex justify-center h-[44vh] cards-perspective">
+      <div className="cards-perspective flex h-[44vh] justify-center">
         <div
           ref={scrollRef}
-          className="mt-[-80px] flex flex-wrap justify-center gap-2 w-2/4 mx-auto overflow-y-scroll hide-scrollbar"
+          className="hide-scrollbar mx-auto mt-[-80px] flex w-2/4 flex-wrap justify-center gap-2 overflow-y-scroll"
         >
           <div className="h-[390px] w-full"></div>
           {tempCharacters.map((character, index) => (
-            <SmallCard
-              size="scrollingCardSize"
+            <div
+              className="hover:rotate-x-[50deg] transform transition-transform duration-300 hover:-translate-y-4 "
               key={index}
-              image={character.image}
-              name={character.name}
-              role={character.role}
-            />
+            >
+              <SmallCard
+                size="scrollingCardSize"
+                image={character.image}
+                name={character.name}
+                role={character.role}
+              />
+            </div>
           ))}
         </div>
       </div>
-      <div className="flex justify-center cards-perspective">
+      <div className="cards-perspective flex justify-center">
         <img
-          className="mt-20 animate-bounce w-10 h-10 "
+          className="mt-20 h-10 w-10 animate-bounce "
           src={fleche}
           alt="Flèche directionnelle"
         />

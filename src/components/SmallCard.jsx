@@ -30,7 +30,7 @@ export default function Smallcard({ image, name, role, size = 'default' }) {
             alt={name}
           />
           <div
-            className={`${paddingClass} text-font-color uppercase font-main`}
+            className={`${paddingClass} font-main uppercase text-font-color`}
           >
             <figcaption className={`font-semibold ${textSize}`}>
               {name}
