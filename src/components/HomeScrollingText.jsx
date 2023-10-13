@@ -17,9 +17,12 @@ export default function HomeScrollingText() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden h-[36vh] perspective fade-text">
-      <div ref={element} className="absolute top-0 left-0 right-0 bottom-0 scroll-text-animation">
-        <div className="text-[#FFC500] text-4xl font-bold text-justify w-3/5 mx-auto leading-loose">
+    <div className="perspective fade-text relative h-[36vh] overflow-hidden">
+      <div
+        ref={element}
+        className="scroll-text-animation absolute bottom-0 left-0 right-0 top-0"
+      >
+        <div className="mx-auto w-3/5 text-justify text-4xl font-bold leading-loose text-[#FFC500]">
           <h1 className="text-center">WELCOME TO THE STAR WARS ENCYCLOPEDIA</h1>
           <p>
             You are about to embark on an epic adventure across a galaxy far,

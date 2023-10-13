@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <HomeScrollingText />
-      <div className="flex flex-wrap justify-center mt-20 gap-10">
+      <div className="mt-20 flex flex-wrap justify-center gap-10">
         <SmallCard
           image="image1.jpg"
           name="Characters"
