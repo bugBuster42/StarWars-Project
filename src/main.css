@@ -26,4 +26,9 @@
       0 20%
     );
   }
+
+  .card-species:has(+ .card-species:hover),
+  .card-species:hover + .card-species {
+    transform: scaleY(1.1);
+  }
 }
