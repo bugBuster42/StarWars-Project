@@ -13,6 +13,9 @@ export default {
       fontFamily: {
         main: ['Coustard', 'cursive'],
       },
+      backgroundImage: {
+        main: "url('/background.png')",
+      },
     },
   },
   plugins: [],
