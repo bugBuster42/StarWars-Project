@@ -16,8 +16,8 @@ export default function NavBar() {
       </div>
       <div className="flex flex-col">
         <MenuItem url="characters" icon={<CharacterIcon />} text="Characters" />
+        <MenuItem url="species" icon={<SpecieIcon />} text="species" />
         <MenuItem url="ships" icon={<ShipIcon />} text="ships" />
-        {/* <MenuItem url="species" icon={<SpecieIcon />} text="species" /> */}
         {/* <MenuItem url="planets" icon={<PlanetIcon />} text="planets" /> */}
       </div>
     </div>
