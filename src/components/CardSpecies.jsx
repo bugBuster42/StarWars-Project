@@ -9,3 +9,5 @@ export default function CardSpecies({ children }) {
     </div>
   );
 }
+
+// [&:has(+ .card-species:hover):scale-110
