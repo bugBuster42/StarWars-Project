@@ -12,6 +12,7 @@ export default function ShipContent({ ships = [] }) {
               }.jpg`}
               name={ship.name}
               role={ship.model}
+              size={48}
               fallback="/ship-placeholder.jpg"
             />
           </div>
