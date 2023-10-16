@@ -1,6 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 export default function CardSpecies({ children }) {
   return (
     <div
@@ -12,7 +9,3 @@ export default function CardSpecies({ children }) {
     </div>
   );
 }
-
-CardSpecies.propTypes = {
-  children: PropTypes.element.isRequired,
-};

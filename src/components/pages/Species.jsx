@@ -1,4 +1,3 @@
-import React from 'react';
 import CardSpecies from '../CardSpecies';
 import Smallcard from '../SmallCard';
 
