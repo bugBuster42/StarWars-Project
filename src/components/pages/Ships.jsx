@@ -11,18 +11,39 @@ export default function Ships() {
 
   useEffect(() => {
     const controller = new AbortController();
-    const url = `https://swapi.dev/api/starships/?page=${activePage}`;
+    const url = `https://swapi.dev/api/starships/?page=${
+      activePage % 2 !== 0 ? (activePage + 1) / 2 : activePage / 2
+    }`;
 
     setLoading(true);
     getInfo(url, controller)
       .then((data) => {
-        setShips((prev) => {
-          prev[activePage - 1] = data.results;
-          return prev;
-        });
+        if (activePage % 2 !== 0) {
+          setShips((prev) => {
+            prev[activePage - 1] = [
+              data.results[0],
+              data.results[1],
+              data.results[2],
+              data.results[3],
+              data.results[4],
+            ];
+            return prev;
+          });
+        } else {
+          setShips((prev) => {
+            prev[activePage - 1] = [
+              data.results[5] ? data.results[5] : null,
+              data.results[6] ? data.results[6] : null,
+              data.results[7] ? data.results[7] : null,
+              data.results[8] ? data.results[8] : null,
+              data.results[9] ? data.results[9] : null,
+            ];
+            return prev;
+          });
+        }
         setLoading(false);
         if (pages === 1) {
-          setPages(Math.ceil(data.count / 10));
+          setPages(Math.ceil(data.count / 10) * 2);
         }
       })
       .catch((error) => {

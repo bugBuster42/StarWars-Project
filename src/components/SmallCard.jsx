@@ -1,6 +1,6 @@
 import ImageWithFallback from './ImageWithFallback';
 
-export default function Smallcard({ image, name, role, fallback, size = 80 }) {
+export default function Smallcard({ image, name, role, fallback, size }) {
   return (
     <>
       <div className="clip-path-polygon">
