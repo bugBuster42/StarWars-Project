@@ -5,52 +5,53 @@ import PaginationButton from '../PaginationButton';
 
 export default function Species() {
   const [species, setSpecies] = useState([]);
-  const [activePage, setActivePage] = useState(1);
-  const [pages, setPages] = useState(1);
+  const [activeButton, setActiveButton] = useState(0);
+  const [apiPageCount, setApiPageCount] = useState(1);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
-    const url = `https://swapi.dev/api/species/?page=${activePage}`;
 
-    setLoading(true);
-    getInfo(url, controller)
-      .then((data) => {
-        setSpecies((prev) => {
-          prev[activePage - 1] = data.results.slice(0, 5);
-          return prev;
-        });
+    (async () => {
+      try {
+        const apiPage = Math.floor(activeButton / 2) + 1;
+        const startSlice = activeButton % 2 === 0 ? 0 : 5;
+        const endSlice = startSlice + 5;
+        const url = `https://swapi.dev/api/species/?page=${apiPage}`;
+        setLoading(true);
+        const data = await getInfo(url, controller);
+        setSpecies(data.results.slice(startSlice, endSlice));
         setLoading(false);
-        if (pages === 1) {
-          setPages(Math.ceil(data.count / 5));
+        if (apiPageCount === 1) {
+          setApiPageCount(Math.ceil(data.count / 5));
         }
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error('Error fetching data:', error);
-      });
+      }
+    })();
 
     return () => {
       controller.abort();
     };
-  }, [activePage]);
+  }, [activeButton]);
+
+  const pagination = new Array(apiPageCount)
+    .fill()
+    .map((a, index) => (
+      <PaginationButton
+        key={index}
+        onClick={() => setActiveButton(index)}
+        isActive={activeButton === index}
+      />
+    ));
 
   return (
     <>
       <div className="px-32 pt-36">
         <div className="flex justify-end pb-5">
-          <div className="flex gap-2">
-            {new Array(pages).fill().map((a, index) => (
-              <PaginationButton
-                key={index}
-                onClick={() => {
-                  setActivePage(index + 1);
-                }}
-                isActive={activePage === index + 1}
-              />
-            ))}
-          </div>
+          <div className="flex gap-2">{pagination}</div>
         </div>
-        {loading ? null : <CardSpecies species={species[activePage - 1]} />}
+        {loading ? null : <CardSpecies species={species} />}
       </div>
     </>
   );
