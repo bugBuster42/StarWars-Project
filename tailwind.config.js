@@ -12,9 +12,6 @@ export default {
     'rotate-y-[252deg]',
     'rotate-y-[288deg]',
     'rotate-y-[324deg]',
-    {
-      pattern: /rotate-y-\[-*\d+deg\]/,
-    },
   ],
 
   theme: {
