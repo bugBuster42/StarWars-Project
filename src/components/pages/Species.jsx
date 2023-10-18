@@ -3,6 +3,8 @@ import CardSpecies from '../CardSpecies';
 import getInfo from '../fetch/getInfo';
 import PaginationButton from '../PaginationButton';
 
+const cache = {};
+
 export default function Species() {
   const [species, setSpecies] = useState([]);
   const [activeButton, setActiveButton] = useState(0);
@@ -19,7 +21,13 @@ export default function Species() {
         const endSlice = startSlice + 5;
         const url = `https://swapi.dev/api/species/?page=${apiPage}`;
         setLoading(true);
-        const data = await getInfo(url, controller);
+        let data;
+        if (cache[apiPage]) {
+          data = cache[apiPage];
+        } else {
+          data = await getInfo(url, controller);
+          cache[apiPage] = data;
+        }
         setSpecies(data.results.slice(startSlice, endSlice));
         setLoading(false);
         if (apiPageCount === 1) {
