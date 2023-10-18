@@ -4,9 +4,6 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    overflow: hidden;
-  }
 }
 
 @layer utilities {
@@ -27,23 +24,10 @@
     );
   }
 
-  .scroll-text-animation {
-    animation: scroll 300s linear;
-  }
   .perspective {
     perspective: 350px;
   }
 
-  @keyframes scroll {
-    0% {
-      top: 36vh;
-      transform: translateZ(0) rotateX(35deg);
-    }
-    100% {
-      top: -7500px;
-      transform: translateZ(-2500px) rotateX(36deg);
-    }
-  }
   .fade-text::before,
   .fade-text::after {
     content: '';
@@ -64,5 +48,9 @@
     bottom: 0;
     height: 10px;
     background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }
+
+  .translate-cards-animation-delay {
+    animation-delay: 40s;
   }
 }
