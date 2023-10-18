@@ -2,16 +2,11 @@
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   safelist: [
-    'rotate-y-[0deg]',
-    'rotate-y-[36deg]',
-    'rotate-y-[72deg]',
-    'rotate-y-[108deg]',
-    'rotate-y-[144deg]',
-    'rotate-y-[180deg]',
-    'rotate-y-[216deg]',
-    'rotate-y-[252deg]',
-    'rotate-y-[288deg]',
-    'rotate-y-[324deg]',
+    ...Array.from(Array(10).keys()).map(
+      (i) => `[transform:rotateY(${i * 36}deg)translateZ(450px)]`,
+    ),
+    ...Array.from(Array(10).keys()).map((i) => `rotate-y-[${i * 36}deg]`),
+    ...Array.from(Array(10).keys()).map((i) => `rotate-y-[-${i * 36}deg]`),
   ],
 
   theme: {

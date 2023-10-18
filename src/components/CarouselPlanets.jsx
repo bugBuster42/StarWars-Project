@@ -18,8 +18,7 @@ export default function CarouselPlanets({ slides }) {
           <div className="perspective relative my-32 w-52">
             <div className="absolute mt-96 text-yellow-200">card détail</div>
             <div
-              className="transform-style absolute h-full w-full duration-[1000ms]"
-              style={{ transform: `rotateY(${currdeg}deg)` }}
+              className={`transform-style rotate-y-[${currdeg}deg] absolute h-full w-full duration-[1000ms]`}
             >
               {slides.map((s, i) => (
                 <img
@@ -28,12 +27,9 @@ export default function CarouselPlanets({ slides }) {
                   onClick={() => {
                     nextSlide(i);
                   }}
-                  className={`rotate-y-[${
+                  className={`absolute block h-52 w-52 rounded-full bg-slate-600 object-cover [transform:rotateY(${
                     i * 36
-                  }deg] absolute block h-52 w-52 rounded-full bg-slate-600 object-cover translate-z-[450px]`}
-                  style={{
-                    transform: `rotateY(${i * 36}deg) translateZ(450px)`,
-                  }}
+                  }deg)translateZ(450px)]`}
                 />
               ))}
             </div>
