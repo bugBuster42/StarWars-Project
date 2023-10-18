@@ -8,8 +8,6 @@ export default function CarouselPlanets({ slides }) {
     setCurrdeg((currdeg) => currdeg - 36 * (i - current));
     setCurrent(i);
   };
-  console.log(currdeg);
-  console.log(current);
 
   return (
     <>

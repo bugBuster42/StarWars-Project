@@ -21,7 +21,10 @@ export default {
       fontFamily: {
         main: ['Coustard', 'cursive'],
       },
+      backgroundImage: {
+        main: "url('/background.png')",
+      },
     },
   },
-  plugins: [require('tailwindcss-3d')],
+  plugins: ['tailwindcss-3d'],
 };
