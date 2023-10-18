@@ -17,7 +17,6 @@ export default function CardSpecies({ species = [] }) {
               }.jpg`}
               name={specie.name}
               role={specie.classification}
-              fallback="/ship-placeholder.jpg"
             />
           </div>
         ))}
