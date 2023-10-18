@@ -18,7 +18,7 @@ export default function NavBar() {
         <MenuItem url="characters" icon={<CharacterIcon />} text="Characters" />
         {/* <MenuItem url="ships" icon={<ShipIcon />} text="ships" /> */}
         {/* <MenuItem url="species" icon={<SpecieIcon />} text="species" /> */}
-        {/* <MenuItem url="planets" icon={<PlanetIcon />} text="planets" /> */}
+        <MenuItem url="planets" icon={<PlanetIcon />} text="planets" />
       </div>
     </div>
   );

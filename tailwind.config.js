@@ -1,6 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  safelist: [
+    'rotate-y-[0deg]',
+    'rotate-y-[36deg]',
+    'rotate-y-[72deg]',
+    'rotate-y-[108deg]',
+    'rotate-y-[144deg]',
+    'rotate-y-[180deg]',
+    'rotate-y-[216deg]',
+    'rotate-y-[252deg]',
+    'rotate-y-[288deg]',
+    'rotate-y-[324deg]',
+    {
+      pattern: /rotate-y-\[-*\d+deg\]/,
+    },
+  ],
+
   theme: {
     extend: {
       colors: {
@@ -15,5 +31,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-3d')],
 };
