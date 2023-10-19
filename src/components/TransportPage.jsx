@@ -9,18 +9,16 @@ export default function Transport({ object }) {
   const [activePage, setActivePage] = useState(1);
   const [pages, setPages] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [lastObject, setLastObject] = useState(object);
+
+  useEffect(() => {
+    setActivePage(1);
+  }, [object]);
 
   useEffect(() => {
     const controller = new AbortController();
     const url = `https://swapi.dev/api/${object}/?page=${
       activePage % 2 !== 0 ? (activePage + 1) / 2 : activePage / 2
     }`;
-
-    if (lastObject !== object) {
-      setLastObject(object);
-      setActivePage(1);
-    }
     setLoading(true);
     getInfo(url, controller)
       .then((data) => {
@@ -36,9 +34,7 @@ export default function Transport({ object }) {
           });
         }
         setLoading(false);
-        if (pages === 1) {
-          setPages(Math.ceil(data.count / 10) * 2);
-        }
+        setPages(Math.ceil(data.count / 10) * 2);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
