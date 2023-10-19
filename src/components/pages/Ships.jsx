@@ -3,8 +3,6 @@ import getInfo from '../fetch/getInfo';
 import ShipContent from '../ShipContent';
 import PaginationButton from '../PaginationButton';
 import Loading from '../Loading';
-import MovingStar from '../MovingStar';
-import Star from '../Star';
 
 export default function Ships() {
   const [ships, setShips] = useState([]);
