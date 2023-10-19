@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function CarouselPlanets({ planets, page }) {
+export default function CarouselPlanets({ planets }) {
   const [currDeg, setCurrDeg] = useState(0);
   const [current, setCurrent] = useState(0);
 
@@ -8,7 +8,6 @@ export default function CarouselPlanets({ planets, page }) {
     setCurrDeg((currDeg) => currDeg - 36 * (i - current));
     setCurrent(i);
   };
-
   return (
     <>
       <div className="flex justify-center">
@@ -20,10 +19,9 @@ export default function CarouselPlanets({ planets, page }) {
               {planets.map((p, i) => (
                 <img
                   src={`https://starwars-visualguide.com/assets/img/planets/${
-                    page - 1 === 0 ? '' : page - 1
-                  }${i}.jpg`}
+                    p.url.split('/')[5]
+                  }.jpg`}
                   onError={(e) => {
-                    e.target.onerror = null;
                     e.target.src = '/placeholder-planet.png';
                   }}
                   alt={p.name}

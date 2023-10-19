@@ -14,10 +14,7 @@ export default function Planets() {
     const url = `https://swapi.dev/api/planets/?page=${page}`;
     getInfo(url, controller)
       .then((data) => {
-        setPlanets((current) => {
-          current[0] = data.results;
-          return current;
-        });
+        setPlanets(data.results);
         setCountPages(data.count / 10);
         setLoading(false);
       })
@@ -28,7 +25,6 @@ export default function Planets() {
       controller.abort();
     };
   }, [page]);
-
   return (
     <>
       <div className="flex justify-center">
@@ -46,7 +42,7 @@ export default function Planets() {
           </div>
         </div>
       </div>
-      {loading ? null : <CarouselPlanets planets={planets[0]} page={page} />}
+      {loading ? null : <CarouselPlanets planets={planets} />}
     </>
   );
 }
