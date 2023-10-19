@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 
 export default function Loading() {
-  console.log('working');
-
   return (
     <>
       <div className="justify-top mt-36 flex items-center gap-4">
