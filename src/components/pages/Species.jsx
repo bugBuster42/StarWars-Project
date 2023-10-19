@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import CardSpecies from '../CardSpecies';
 import getInfo from '../fetch/getInfo';
+import Loading from '../Loading';
 import PaginationButton from '../PaginationButton';
+import CardSpecies from '../CardSpecies';
 
 export default function Species() {
   const [species, setSpecies] = useState([]);
@@ -47,7 +48,7 @@ export default function Species() {
             ))}
           </div>
         </div>
-        {loading ? null : <CardSpecies species={species} />}
+        {loading ? <Loading /> : <CardSpecies species={species} />}
       </div>
     </>
   );
