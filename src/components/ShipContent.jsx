@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Smallcard from './SmallCard';
 
 import { motion } from 'framer-motion';
