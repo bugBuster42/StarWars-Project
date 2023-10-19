@@ -1,7 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  safelist: ['h-48', 'h-80'],
+  safelist: [
+    'h-48',
+    'h-80',
+    'w-36',
+    'w-20',
+    'w-44',
+    'top-20',
+    'left-7',
+    'top-44',
+    'right-96',
+  ],
   theme: {
     extend: {
       colors: {
