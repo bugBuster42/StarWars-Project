@@ -26,4 +26,12 @@
       0 20%
     );
   }
+
+  .perspective {
+    perspective: 350px;
+  }
+
+  .animation-delay-40000 {
+    animation-delay: 40s;
+  }
 }
