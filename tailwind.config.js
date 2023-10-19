@@ -9,6 +9,9 @@ export default {
         'primary-light': '#C7A98D',
         'primary-dark': '#664A30',
         'text-yellow': '#FFC500',
+        'light-green': '#DAFED8',
+        'fluo-green': '#42EA45',
+        'dark-green': '#1D6A1E',
       },
       fontFamily: {
         main: ['Coustard', 'cursive'],
@@ -35,6 +38,12 @@ export default {
       animation: {
         'scroll-text': 'scroll 300s linear forwards',
         'move-cards': 'move-cards 9s ease-out forwards',
+      },
+      rotate: {
+        270: '270deg',
+      },
+      boxShadow: {
+        laser: '-9px 1px 50px 30px #1D6A1E',
       },
     },
   },
