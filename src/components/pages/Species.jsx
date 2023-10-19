@@ -3,8 +3,6 @@ import CardSpecies from '../CardSpecies';
 import getInfo from '../fetch/getInfo';
 import PaginationButton from '../PaginationButton';
 
-const cache = {};
-
 export default function Species() {
   const [species, setSpecies] = useState([]);
   const [activeButton, setActiveButton] = useState(0);
@@ -21,18 +19,10 @@ export default function Species() {
         const endSlice = startSlice + 5;
         const url = `https://swapi.dev/api/species/?page=${apiPage}`;
         setLoading(true);
-        let data;
-        if (cache[apiPage]) {
-          data = cache[apiPage];
-        } else {
-          data = await getInfo(url, controller);
-          cache[apiPage] = data;
-        }
+        const data = await getInfo(url, controller);
+        setApiPageCount(Math.ceil(data.count / 5));
         setSpecies(data.results.slice(startSlice, endSlice));
         setLoading(false);
-        if (apiPageCount === 1) {
-          setApiPageCount(Math.ceil(data.count / 5));
-        }
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -43,21 +33,19 @@ export default function Species() {
     };
   }, [activeButton]);
 
-  const pagination = new Array(apiPageCount)
-    .fill()
-    .map((a, index) => (
-      <PaginationButton
-        key={index}
-        onClick={() => setActiveButton(index)}
-        isActive={activeButton === index}
-      />
-    ));
-
   return (
     <>
       <div className="px-32 pt-36">
         <div className="flex justify-end pb-5">
-          <div className="flex gap-2">{pagination}</div>
+          <div className="flex gap-2">
+            {new Array(apiPageCount).fill().map((a, index) => (
+              <PaginationButton
+                key={index}
+                onClick={() => setActiveButton(index)}
+                isActive={activeButton === index}
+              />
+            ))}
+          </div>
         </div>
         {loading ? null : <CardSpecies species={species} />}
       </div>
