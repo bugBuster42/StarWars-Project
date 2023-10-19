@@ -22,7 +22,7 @@ export default function NavBar() {
           icon={<ShipIcon />}
           text="ships / vehicules"
         />
-        {/* <MenuItem url="planets" icon={<PlanetIcon />} text="planets" /> */}
+        <MenuItem url="planets" icon={<PlanetIcon />} text="planets" />
       </div>
     </div>
   );
