@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    overflow-x: hidden;
+  }
 }
 
 @layer utilities {
@@ -28,7 +31,7 @@
     perspective: 350px;
   }
 
-  .animation-delay-4000 {
+  .animation-delay-40000 {
     animation-delay: 40s;
   }
 }
