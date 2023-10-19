@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import getInfo from '../fetch/getInfo';
 import ShipContent from '../ShipContent';
 import PaginationButton from '../PaginationButton';
+import Loading from '../Loading';
 
 export default function Ships() {
   const [ships, setShips] = useState([]);
@@ -59,7 +60,7 @@ export default function Ships() {
             ))}
           </div>
         </div>
-        {loading ? null : <ShipContent ships={ships[activePage - 1]} />}
+        {loading ? <Loading /> : <ShipContent ships={ships[activePage - 1]} />}
       </div>
     </>
   );

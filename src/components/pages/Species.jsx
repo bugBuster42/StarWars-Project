@@ -1,14 +1,55 @@
+import { useEffect, useState } from 'react';
+import getInfo from '../fetch/getInfo';
+import Loading from '../Loading';
+import PaginationButton from '../PaginationButton';
 import CardSpecies from '../CardSpecies';
-import Smallcard from '../SmallCard';
 
 export default function Species() {
-  const cards = [1, 2, 3, 4, 5];
+  const [species, setSpecies] = useState([]);
+  const [activeButton, setActiveButton] = useState(0);
+  const [apiPageCount, setApiPageCount] = useState(1);
+  const [loading, setLoading] = useState(true);
 
-  const cardsIndex = cards.map((x) => (
-    <CardSpecies key={x}>
-      <Smallcard />
-    </CardSpecies>
-  ));
+  useEffect(() => {
+    const controller = new AbortController();
 
-  return <div className="mt-10 flex justify-center gap-5">{cardsIndex}</div>;
+    (async () => {
+      try {
+        const apiPage = Math.floor(activeButton / 2) + 1;
+        const startSlice = activeButton % 2 === 0 ? 0 : 5;
+        const endSlice = startSlice + 5;
+        const url = `https://swapi.dev/api/species/?page=${apiPage}`;
+        setLoading(true);
+        const data = await getInfo(url, controller);
+        setApiPageCount(Math.ceil(data.count / 5));
+        setSpecies(data.results.slice(startSlice, endSlice));
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    })();
+
+    return () => {
+      controller.abort();
+    };
+  }, [activeButton]);
+
+  return (
+    <>
+      <div className="px-32 pt-36">
+        <div className="flex justify-end pb-5">
+          <div className="flex gap-2">
+            {new Array(apiPageCount).fill().map((a, index) => (
+              <PaginationButton
+                key={index}
+                onClick={() => setActiveButton(index)}
+                isActive={activeButton === index}
+              />
+            ))}
+          </div>
+        </div>
+        {loading ? <Loading /> : <CardSpecies species={species} />}
+      </div>
+    </>
+  );
 }
