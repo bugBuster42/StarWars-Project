@@ -1,7 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  safelist: ['h-48', 'h-80'],
+  safelist: [
+    ...Array.from(Array(10).keys()).map(
+      (i) => `[transform:rotateY(${i * 36}deg)translateZ(400px)]`,
+    ),
+    ...Array.from(Array(10).keys()).map((i) => `rotate-y-[${i * 36}deg]`),
+    ...Array.from(Array(10).keys()).map((i) => `rotate-y-[-${i * 36}deg]`),
+    'h-48',
+    'h-80',
+  ],
   theme: {
     extend: {
       colors: {
@@ -48,5 +56,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-3d')],
 };
