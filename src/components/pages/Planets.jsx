@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import CarouselPlanets from '../CarouselPlanets';
 import getInfo from '../fetch/getInfo';
 import PaginationButton from '../PaginationButton';
+import Loading from '../Loading';
 
 export default function Planets() {
   const [planets, setPlanets] = useState([]);
@@ -42,7 +43,7 @@ export default function Planets() {
           </div>
         </div>
       </div>
-      {loading ? null : <CarouselPlanets planets={planets} />}
+      {loading ? <Loading /> : <CarouselPlanets planets={planets} />}
     </>
   );
 }
