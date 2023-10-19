@@ -64,12 +64,6 @@ export default function Ships() {
         </div>
         {loading ? <Loading /> : <ShipContent ships={ships[activePage - 1]} />}
       </div>
-      <MovingStar top={0} />
-      <MovingStar top={100} delay={3} width="20" />
-      <MovingStar top={620} delay={4} width="44" />
-      <MovingStar top={750} delay={10} />
-      <Star top="20" left="7" width="20" />
-      <Star top="20" right="96" width="20" />
     </>
   );
 }

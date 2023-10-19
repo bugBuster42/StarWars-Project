@@ -1,8 +1,3 @@
-import { motion } from 'framer-motion';
-
-const initialX = 0;
-const rightX = 2000;
-
 export default function Star({
   top = '',
   left = '',
