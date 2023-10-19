@@ -19,7 +19,7 @@ export default {
       keyframes: {
         scroll: {
           '0%': {
-            top: '36vh',
+            top: '350px',
             transform: 'translateZ(0) rotateX(35deg)',
           },
           '100%': {
