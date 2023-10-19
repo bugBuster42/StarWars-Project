@@ -31,7 +31,7 @@ export default function Planets() {
 
   return (
     <>
-      <div className='flex justify-center'>
+      <div className="flex justify-center">
         <div className="absolute z-20 ">
           <div className="flex gap-2">
             {new Array(countPages).fill().map((p, i) => (
