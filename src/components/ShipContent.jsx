@@ -3,13 +3,13 @@ import Smallcard from './SmallCard';
 
 import { motion } from 'framer-motion';
 
+const initialX = 0;
+
+const leftX = -1000;
+const rightX = 1000;
+const delay = [0, 1, 2, 3, 4, 0, 1, 2, 3, 4];
+
 export default function ShipContent({ ships = [] }) {
-  let initialX = 0;
-
-  const leftX = -1000;
-  const rightX = 1000;
-  const delay = [0, 1, 2, 3, 4, 0, 1, 2, 3, 4];
-
   return (
     <>
       <div>

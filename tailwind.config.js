@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  safelist: ['h-48', 'overflow-x-hidden'],
+  safelist: ['h-48', 'h-80'],
   theme: {
     extend: {
       colors: {

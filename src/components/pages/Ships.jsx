@@ -20,24 +20,12 @@ export default function Ships() {
       .then((data) => {
         if (activePage % 2 !== 0) {
           setShips((prev) => {
-            prev[activePage - 1] = [
-              data.results[0],
-              data.results[1],
-              data.results[2],
-              data.results[3],
-              data.results[4],
-            ];
+            prev[activePage - 1] = data.results.slice(0, 5);
             return prev;
           });
         } else {
           setShips((prev) => {
-            prev[activePage - 1] = [
-              data.results[5] ? data.results[5] : null,
-              data.results[6] ? data.results[6] : null,
-              data.results[7] ? data.results[7] : null,
-              data.results[8] ? data.results[8] : null,
-              data.results[9] ? data.results[9] : null,
-            ];
+            prev[activePage - 1] = data.results.slice(5, 10);
             return prev;
           });
         }
