@@ -3,7 +3,7 @@ export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   safelist: [
     ...Array.from(Array(10).keys()).map(
-      (i) => `[transform:rotateY(${i * 36}deg)translateZ(450px)]`,
+      (i) => `[transform:rotateY(${i * 36}deg)translateZ(400px)]`,
     ),
     ...Array.from(Array(10).keys()).map((i) => `rotate-y-[${i * 36}deg]`),
     ...Array.from(Array(10).keys()).map((i) => `rotate-y-[-${i * 36}deg]`),

@@ -3,6 +3,7 @@ import Logo from './icons/Logo';
 import MenuItem from './MenuItem';
 import CharacterIcon from './icons/CharacterIcon';
 import ShipIcon from './icons/ShipIcon';
+import SpecieIcon from './icons/SpecieIcon';
 import PlanetIcon from './icons/PlanetIcon';
 
 export default function NavBar() {
@@ -15,8 +16,8 @@ export default function NavBar() {
       </div>
       <div className="flex flex-col">
         <MenuItem url="characters" icon={<CharacterIcon />} text="Characters" />
+        <MenuItem url="species" icon={<SpecieIcon />} text="species" />
         <MenuItem url="ships" icon={<ShipIcon />} text="ships" />
-        {/* <MenuItem url="species" icon={<SpecieIcon />} text="species" /> */}
         <MenuItem url="planets" icon={<PlanetIcon />} text="planets" />
       </div>
     </div>

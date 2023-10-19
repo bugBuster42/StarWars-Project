@@ -1,4 +1,5 @@
 export default function PaginationButton({ index, onClick, isActive }) {
+  console.log(onClick);
   return (
     <button
       key={index}
