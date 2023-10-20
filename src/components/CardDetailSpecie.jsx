@@ -11,8 +11,6 @@ export default function CardDetailSpecie({ specie }) {
 
   return (
     <>
-      <h1>Card détail specie</h1>
-
       <div className="flex justify-center">
         <div className="bg-[url('./src/assets/card-support.png')] bg-no-repeat">
           <div className="group h-80 w-full">

@@ -21,7 +21,6 @@ export default function ResidentsPlanet({ residents }) {
       }
       setListResidents(newListResidents);
     };
-
     fetchData();
   }, [residents]);
 
