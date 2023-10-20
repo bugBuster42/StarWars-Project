@@ -1,5 +1,4 @@
 import Smallcard from './SmallCard';
-
 import { motion } from 'framer-motion';
 
 const initialX = 0;
@@ -8,13 +7,17 @@ const leftX = -1000;
 const rightX = 1000;
 const delay = [0, 1, 2, 3, 4, 0, 1, 2, 3, 4];
 
-export default function ShipContent({ ships = [] }) {
+export default function TransportContent({
+  transports = [],
+  object,
+  fallback,
+}) {
   return (
     <>
       <div>
-        {ships
+        {transports
           .filter((x) => x !== null)
-          .map((ship, index) => (
+          .map((transport, index) => (
             <div key={index}>
               <motion.div
                 key={index}
@@ -22,7 +25,7 @@ export default function ShipContent({ ships = [] }) {
                   x: initialX,
                   position: 'absolute',
                   zIndex: 10 - index,
-                  top: 250,
+                  top: 300,
                   left: 750,
                 }}
                 animate={[{ x: [initialX, leftX, rightX, initialX] }]}
@@ -35,12 +38,12 @@ export default function ShipContent({ ships = [] }) {
                 }}
               >
                 <Smallcard
-                  image={`https://starwars-visualguide.com/assets/img/starships/${
-                    ship.url.split('/')[5]
+                  image={`https://starwars-visualguide.com/assets/img/${object}/${
+                    transport.url.split('/')[5]
                   }.jpg`}
-                  name={ship.name}
-                  role={ship.model}
-                  fallback="/ship-placeholder.png"
+                  name={transport.name}
+                  role={transport.model}
+                  fallback={fallback}
                   size={48}
                 />
               </motion.div>
