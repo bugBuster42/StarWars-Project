@@ -1,5 +1,5 @@
 export default function ImageWithFallback({ fallback, src, name, size = 80 }) {
-  const defaultImage = './ship-placeholder.jpg';
+  const defaultImage = './ship-placeholder.png';
 
   return (
     <img
