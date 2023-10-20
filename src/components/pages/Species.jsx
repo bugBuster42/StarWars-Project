@@ -36,6 +36,9 @@ export default function Species() {
 
   return (
     <>
+      <div className="absolute top-0 ml-72 flex justify-center">
+        {loading ? <Loading mt={2} /> : null}
+      </div>
       <div className="px-32 pt-36">
         <div className="flex justify-end pb-5">
           <div className="flex gap-2">
@@ -48,7 +51,7 @@ export default function Species() {
             ))}
           </div>
         </div>
-        {loading ? <Loading /> : <CardSpecies species={species} />}
+        {loading ? null : <CardSpecies species={species} />}
       </div>
     </>
   );
