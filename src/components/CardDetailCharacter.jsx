@@ -10,7 +10,6 @@ export default function CardDetailCharacter({ character }) {
     hair,
     skin,
     eye,
-    image,
   } = character;
   return (
     <>

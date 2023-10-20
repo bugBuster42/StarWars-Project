@@ -5,12 +5,8 @@ export default function CardDetailSpecie({ specie }) {
     designation,
     average_height,
     skin_colors,
-    hair_colors,
-    eye_colors,
     average_lifespan,
-    homeworld,
     language,
-    image,
   } = specie;
 
   return (
