@@ -7,7 +7,7 @@ export default function CardSpecies({ species = [] }) {
         {species.map((specie, index) => (
           <div
             className={
-              'card-species w-[286px] scale-100 duration-300 hover:ml-10 hover:mr-10 hover:scale-125 [&:has(+.card-species:hover)]:scale-110 [&:hover+.card-species]:scale-110'
+              'card-species w-[286px] duration-300 scale-100 hover:ml-10 hover:mr-10 hover:scale-125 [&:has(+.card-species:hover)]:scale-110 [&:hover+.card-species]:scale-110'
             }
             key={index}
           >
