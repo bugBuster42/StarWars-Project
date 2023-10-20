@@ -19,20 +19,20 @@ export default function CardDetailCharacter({ character }) {
       <div className="flex justify-center">
         <div className="bg-[url('./src/assets/card-support.png')] bg-no-repeat">
           <div className="group h-80 w-full">
-            <div className="relative h-[236] w-[682px] top-[33px] left-[64px] origin-center transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              <div className="absolute z-10 bg-no-repeat h-full w-full">
+            <div className="relative left-[64px] top-[33px] h-[236] w-[682px] origin-center transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              <div className="absolute z-10 h-full w-full bg-no-repeat">
                 <img
                   src="./src/assets/card-front.png"
                   alt=""
                   className="absolute z-0"
                 />
-                <div className="z-20 flex justify-center items-center mt-3 space-x-8 group-hover:[transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="z-20 mt-3 flex items-center justify-center space-x-8 transition-all group-hover:[transform:rotateY(180deg)]">
                   <img
-                    src={image}
+                    src=""
                     alt="character"
-                    className="h-52 w-40 z-10 object-cover"
+                    className="z-10 h-52 w-40 object-cover"
                   />
-                  <div className="flex flex-col items-center z-10 leading-10 text-font-color font-test font-medium text-xl">
+                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
                     <p className="uppercase">{name}</p>
                     <div className="flex flex-row space-x-8">
                       <div className="flex flex-col">
@@ -73,12 +73,9 @@ export default function CardDetailCharacter({ character }) {
                   </div>
                 </div>
               </div>
-              <div className="absolute z-10 h-full w-full top-0 right-0 bg-primary/20 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div className="absolute right-0 top-0 z-10 h-full w-full bg-primary/20 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <div className="flex min-h-full flex-col items-center justify-center">
-                  <p className="">planet</p>
-                  <p className="">vehicle</p>
-                  <p className="">starship</p>
-                  <button className="">Read More</button>
+                  <p className="">Character</p>
                 </div>
               </div>
             </div>
