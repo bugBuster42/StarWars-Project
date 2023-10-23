@@ -35,3 +35,11 @@
     animation-delay: 40s;
   }
 }
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.perspective {
+  perspective: 1000px;
+}

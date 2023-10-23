@@ -36,15 +36,14 @@ const fetchWithImageRetry = async (category, maxRetries, controller) => {
     const imageExists = await checkImage(imageUrl);
 
     if (imageExists) {
-      const data = await getInfo(url, controller);
-      return data;
+      return await getInfo(url, controller);
     }
 
     retries += 1;
     return fetchRandomData();
   };
 
-  return await fetchRandomData();
+  return fetchRandomData();
 };
 
 export default function Home() {
@@ -84,7 +83,7 @@ export default function Home() {
   return (
     <div>
       <HomeScrollingText />
-      <div className="animation-delay-40000 flex translate-y-[1vh] transform animate-move-cards flex-wrap justify-center gap-5">
+      <div className="animation-delay-40000 flex animate-move-cards flex-wrap justify-center gap-5 translate-y-[1vh] transform">
         {Object.keys(data).map((category) => {
           const item = data[category];
           const id = item?.url ? item.url.split('/')[5] : null;

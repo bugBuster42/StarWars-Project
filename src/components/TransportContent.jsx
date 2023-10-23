@@ -1,20 +1,23 @@
 import Smallcard from './SmallCard';
-
 import { motion } from 'framer-motion';
 
 const initialX = 0;
 
-const leftX = -1000;
-const rightX = 1000;
-const delay = [0, 1, 2, 3, 4, 0, 1, 2, 3, 4];
+const leftX = -2000;
+const rightX = 500;
+const delay = [0, 2, 4, 6, 8];
 
-export default function ShipContent({ ships = [] }) {
+export default function TransportContent({
+  transports = [],
+  object,
+  fallback,
+}) {
   return (
     <>
       <div>
-        {ships
+        {transports
           .filter((x) => x !== null)
-          .map((ship, index) => (
+          .map((transport, index) => (
             <div key={index}>
               <motion.div
                 key={index}
@@ -22,25 +25,25 @@ export default function ShipContent({ ships = [] }) {
                   x: initialX,
                   position: 'absolute',
                   zIndex: 10 - index,
-                  top: 250,
-                  left: 750,
+                  top: 300,
+                  left: 1500,
                 }}
                 animate={[{ x: [initialX, leftX, rightX, initialX] }]}
                 transition={{
-                  duration: 5,
+                  duration: 10,
                   ease: 'linear',
-                  times: [0, 0.5, 0.5, 1],
+                  times: [0, 0.8, 0.8, 1],
                   repeat: Infinity,
                   delay: delay[index],
                 }}
               >
                 <Smallcard
-                  image={`https://starwars-visualguide.com/assets/img/starships/${
-                    ship.url.split('/')[5]
+                  image={`https://starwars-visualguide.com/assets/img/${object}/${
+                    transport.url.split('/')[5]
                   }.jpg`}
-                  name={ship.name}
-                  role={ship.model}
-                  fallback="/ship-placeholder.png"
+                  name={transport.name}
+                  role={transport.model}
+                  fallback={fallback}
                   size={48}
                 />
               </motion.div>
