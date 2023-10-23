@@ -82,7 +82,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <>
       <HomeScrollingText />
       <div className="animation-delay-40000 flex animate-move-cards flex-wrap justify-center gap-5 translate-y-[1vh] transform">
         {Object.keys(data).map((category) => {
@@ -100,6 +100,6 @@ export default function Home() {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
