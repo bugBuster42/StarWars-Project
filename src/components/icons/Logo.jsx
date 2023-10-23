@@ -3,7 +3,7 @@ export default function Logo() {
     <svg
       className="ml-[40px] mt-[-37px] w-1/4 text-white transition-colors duration-[400ms] hover:text-[#FFC500]"
       width="361"
-      height="156"
+      height="135"
       viewBox="0 0 361 156"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
