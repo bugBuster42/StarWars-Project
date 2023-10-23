@@ -9,6 +9,7 @@ export default {
     ...Array.from(Array(10).keys()).map((i) => `rotate-y-[-${i * 36}deg]`),
     'h-48',
     'h-80',
+    'w-36',
   ],
   theme: {
     extend: {
