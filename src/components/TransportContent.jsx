@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const initialX = 0;
 
-const leftX = -1000;
-const rightX = 1000;
-const delay = [0, 1, 2, 3, 4, 0, 1, 2, 3, 4];
+const leftX = -2000;
+const rightX = 500;
+const delay = [0, 2, 4, 6, 8];
 
 export default function TransportContent({
   transports = [],
@@ -26,13 +26,13 @@ export default function TransportContent({
                   position: 'absolute',
                   zIndex: 10 - index,
                   top: 300,
-                  left: 750,
+                  left: 1500,
                 }}
                 animate={[{ x: [initialX, leftX, rightX, initialX] }]}
                 transition={{
-                  duration: 5,
+                  duration: 10,
                   ease: 'linear',
-                  times: [0, 0.5, 0.5, 1],
+                  times: [0, 0.8, 0.8, 1],
                   repeat: Infinity,
                   delay: delay[index],
                 }}
