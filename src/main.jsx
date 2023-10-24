@@ -13,6 +13,7 @@ import Characters from './components/pages/Characters';
 import Transports from './components/pages/Transports';
 import Species from './components/pages/Species';
 import Planets from './components/pages/Planets';
+import ErrorPage from './components/pages/ErrorPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
         <Route path="species" element={<Species />} />
         <Route path="ships-vehicules" element={<Transports />} />
         <Route path="planets" element={<Planets />} />
+        <Route path="*" element={<ErrorPage />} />
       </Route>
     </>,
   ),
