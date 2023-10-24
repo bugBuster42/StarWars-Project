@@ -14,18 +14,14 @@ export default function CardDetailCharacter({ character }) {
   return (
     <>
       <div className="flex justify-center">
-        <div className="bg-[url('./src/assets/card-support.png')] bg-no-repeat">
+        <div className="bg-[url('./card-support.png')] bg-no-repeat">
           <div className="group h-80 w-full">
             <div className="relative left-[64px] top-[33px] h-[236] w-[682px] origin-center transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               <div className="absolute z-10 h-full w-full bg-no-repeat">
-                <img
-                  src="./src/assets/card-front.png"
-                  alt=""
-                  className="absolute z-0"
-                />
+                <img src="./card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 transition-all group-hover:[transform:rotateY(180deg)]">
                   <img
-                    src=""
+                    src="./Chewbacca.jpeg"
                     alt="character"
                     className="z-10 h-52 w-40 object-cover"
                   />
@@ -72,7 +68,7 @@ export default function CardDetailCharacter({ character }) {
               </div>
               <div className="absolute right-0 top-0 z-10 h-full w-full bg-primary/20 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <div className="flex min-h-full flex-col items-center justify-center">
-                  <p className="">Character</p>
+                  <p>Character</p>
                 </div>
               </div>
             </div>

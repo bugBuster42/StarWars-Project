@@ -3,25 +3,25 @@ import getInfo from './getInfo';
 
 export default function ResidentsPlanet({ residents }) {
   const [listResidents, setListResidents] = useState([]);
-
+  console.log(residents);
   useEffect(() => {
-    const fetchData = async () => {
-      const newListResidents = [];
-      for (let i = 0; i < residents.length; i++) {
-        const controller = new AbortController();
-        const url = residents[i];
-        try {
-          const data = await getInfo(url, controller);
-          newListResidents.push(data.name);
-        } catch (err) {
-          console.error('Error fetching data:', err);
-        } finally {
-          controller.abort();
-        }
+    const controller = new AbortController();
+    const fetchResidentData = async () => {
+      const promises = residents.map((url) => getInfo(url, controller));
+      try {
+        const responses = await Promise.all(promises);
+        console.log(responses);
+        const names = responses.map((res) => res.name);
+        setListResidents(names);
+      } catch (err) {
+        console.error(err);
       }
-      setListResidents(newListResidents);
     };
-    fetchData();
+
+    fetchResidentData();
+    return () => {
+      controller.abort();
+    };
   }, [residents]);
 
   console.log('list residents', listResidents);
@@ -32,8 +32,8 @@ export default function ResidentsPlanet({ residents }) {
       </h1>
       <div className="flex justify-center">
         <ul className="font-medium-5 columns-3 font-test text-xl leading-10 text-font-color">
-          {listResidents.map((r, i) => (
-            <li key={i}>{r}</li>
+          {listResidents.map((name, i) => (
+            <li key={i}>{name}</li>
           ))}
         </ul>
       </div>

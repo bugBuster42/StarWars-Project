@@ -13,7 +13,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'fond-card-detail': "url('./src/assets/fond-card-detail.png')",
+        'fond-card-detail': "url('./fond-card-detail.png')",
       },
       colors: {
         'font-color': '#FFFFFF',
