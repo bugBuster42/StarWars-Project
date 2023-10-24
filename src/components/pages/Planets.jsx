@@ -28,22 +28,24 @@ export default function Planets() {
   }, [page]);
   return (
     <>
-      <div className="flex justify-center">
-        <div className="absolute z-20 ">
-          <div className="flex gap-2">
-            {new Array(countPages).fill().map((p, i) => (
-              <PaginationButton
-                key={i}
-                onClick={() => {
-                  setPage(i + 1);
-                }}
-                isActive={page === i + 1}
-              />
-            ))}
+      <div>
+        <div className="flex justify-center">
+          <div className="absolute z-20 ">
+            <div className="flex gap-2">
+              {new Array(countPages).fill().map((p, i) => (
+                <PaginationButton
+                  key={i}
+                  onClick={() => {
+                    setPage(i + 1);
+                  }}
+                  isActive={page === i + 1}
+                />
+              ))}
+            </div>
           </div>
         </div>
+        {loading ? <Loading /> : <CarouselPlanets planets={planets} />}
       </div>
-      {loading ? <Loading /> : <CarouselPlanets planets={planets} />}
     </>
   );
 }
