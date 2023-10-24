@@ -3,14 +3,12 @@ import getInfo from './getInfo';
 
 export default function ResidentsPlanet({ residents }) {
   const [listResidents, setListResidents] = useState([]);
-  console.log(residents);
   useEffect(() => {
     const controller = new AbortController();
     const fetchResidentData = async () => {
       const promises = residents.map((url) => getInfo(url, controller));
       try {
         const responses = await Promise.all(promises);
-        console.log(responses);
         const names = responses.map((res) => res.name);
         setListResidents(names);
       } catch (err) {
@@ -24,7 +22,6 @@ export default function ResidentsPlanet({ residents }) {
     };
   }, [residents]);
 
-  console.log('list residents', listResidents);
   return (
     <>
       <h1 className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
