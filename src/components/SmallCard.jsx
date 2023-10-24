@@ -1,43 +1,21 @@
-export default function Smallcard({ image, name, role, size = 'default' }) {
-  const getSizeClass = () => {
-    if (size === 'scrollingCardSize') {
-      return {
-        cardSize: 'w-36 h-40',
-        textSize: 'text-xs',
-        imageClass: 'w-30 h-20',
-        paddingClass: 'p-2',
-      };
-    }
-    return {
-      cardSize: 'w-72 h-80',
-      textSize: 'text-xl',
-      imageClass: 'w-72 h-80',
-      paddingClass: 'p-5',
-    };
-  };
+import ImageWithFallback from './ImageWithFallback';
 
-  const { cardSize, textSize, imageClass, paddingClass } = getSizeClass();
-
+export default function Smallcard({ image, name, role, fallback, size = 80 }) {
   return (
     <>
       <div className="clip-path-polygon">
-        <figure
-          className={`bg-gradient-to-r from-primary-light to-primary-dark ${cardSize} h-auto`}
-        >
-          <img
-            className={`shadow-lg ${imageClass} object-cover`}
+        <figure className="h-auto w-72 bg-gradient-to-r from-primary-light to-primary-dark">
+          <ImageWithFallback
+            fallback={fallback}
             src={image}
-            alt={name}
+            name={name}
+            size={size}
           />
-          <div
-            className={`${paddingClass} font-main uppercase text-font-color`}
-          >
-            <figcaption className={`font-semibold ${textSize}`}>
+          <div className="flex h-36 flex-col p-4 font-main uppercase text-font-color">
+            <figcaption className="mb-2 text-xl font-semibold">
               {name}
             </figcaption>
-            <figcaption className={`font-medium ${textSize}`}>
-              {role}
-            </figcaption>
+            <figcaption className="font-lg font-medium">{role}</figcaption>
           </div>
         </figure>
       </div>
