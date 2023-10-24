@@ -1,4 +1,8 @@
 export default function ImageWithFallback({ fallback, src, name, size = 80 }) {
+  if (!fallback) {
+    throw new Error('fallback prop required');
+  }
+
   return (
     <img
       src={src}

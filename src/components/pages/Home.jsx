@@ -94,7 +94,12 @@ export default function Home() {
           return (
             <div className key={category}>
               <h1>{category}</h1>
-              <Smallcard role={category} name={name} image={imageUrl} />
+              <Smallcard
+                role={category}
+                name={name}
+                image={imageUrl}
+                fallback="/transport-placeholder.png"
+              />
             </div>
           );
         })}
