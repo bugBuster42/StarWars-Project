@@ -1,4 +1,5 @@
-import ResidentsPlanet from './fetch/ResidentsPlanet';
+import { useEffect, useState } from 'react';
+import getInfo from './fetch/getInfo';
 
 export default function CardDetailPlanet({ planet }) {
   const {
@@ -13,6 +14,28 @@ export default function CardDetailPlanet({ planet }) {
     surface_water,
     residents,
   } = planet;
+
+  const [listResidents, setListResidents] = useState([]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const fetchResidentData = async () => {
+      const promises = residents.map((url) => getInfo(url, controller));
+      try {
+        const responses = await Promise.all(promises);
+        const names = responses.map((res) => res.name);
+        setListResidents(names);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchResidentData();
+    return () => {
+      controller.abort();
+    };
+  }, [residents]);
+
   return (
     <>
       <div className="mr-14 mt-96 flex justify-center">
@@ -67,7 +90,16 @@ export default function CardDetailPlanet({ planet }) {
                 </div>
               </div>
               <div className="absolute right-0 top-0 z-10 h-full w-full bg-primary/20 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                <ResidentsPlanet residents={residents} />
+                <h1 className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
+                  Planet resident
+                </h1>
+                <div className="flex justify-center">
+                  <ul className="font-medium-5 columns-3 font-test text-xl leading-10 text-font-color">
+                    {listResidents.map((name, i) => (
+                      <li key={i}>{name}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
