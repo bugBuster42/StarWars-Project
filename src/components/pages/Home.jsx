@@ -36,15 +36,14 @@ const fetchWithImageRetry = async (category, maxRetries, controller) => {
     const imageExists = await checkImage(imageUrl);
 
     if (imageExists) {
-      const data = await getInfo(url, controller);
-      return data;
+      return await getInfo(url, controller);
     }
 
     retries += 1;
     return fetchRandomData();
   };
 
-  return await fetchRandomData();
+  return fetchRandomData();
 };
 
 export default function Home() {
