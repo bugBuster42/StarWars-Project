@@ -39,13 +39,13 @@ export default function Transports() {
         )}
       </div>
       <MovingStar top="50px" width="20" />
-      <MovingStar top="500px" delay={6} />
-      <MovingStar top="800px" width="28" delay={2} />
-      <MovingStar top="750px" width="14" delay={10} />
-      <Star width={28} bottom="40" left="28" />
-      <Star width={14} top="32" right="56" />
-      <Star width={14} bottom="80" right="96" />
-      <Star width={20} top="96" left="96" />
+      <MovingStar top="500px" delay="6" />
+      <MovingStar top="800px" width="28" delay="2" />
+      <MovingStar top="750px" width="14" delay="10" />
+      <Star width="28" bottom="40" left="28" />
+      <Star width="14" top="32" right="56" />
+      <Star width="14" bottom="80" right="96" />
+      <Star width="20" top="96" left="96" />
     </>
   );
 }
