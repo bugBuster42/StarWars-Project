@@ -49,19 +49,17 @@ export default function FilmsFooter() {
   return (
     <>
       <div className="flex h-[6rem] gap-2">
-        {loading ? (
-          <Loading />
-        ) : (
-          movies.map((film, i) => (
-            <img
-              key={i}
-              src={films[i]}
-              alt={`image de ${film}`}
-              onClick={() => toggleModal(i)}
-              className="relative object-cover duration-500 hover:bottom-[20px] hover:mx-10 hover:shadow hover:shadow-stone-500 hover:scale-[2]"
-            />
-          ))
-        )}
+        {loading
+          ? null
+          : movies.map((film, i) => (
+              <img
+                key={i}
+                src={films[i]}
+                alt={`image de ${film}`}
+                onClick={() => toggleModal(i)}
+                className="relative object-cover duration-500 hover:bottom-[20px] hover:mx-10 hover:shadow hover:shadow-stone-500 hover:scale-[2]"
+              />
+            ))}
       </div>
 
       {isModalVisible && selectedFilm && (
