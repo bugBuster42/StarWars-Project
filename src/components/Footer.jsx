@@ -12,8 +12,8 @@ export default function Footer() {
   return (
     <>
       <footer className="mt-44 h-20 w-screen border-t-2 border-primary backdrop-blur">
-        {/*     <div className="relative bottom-[60px] flex justify-center ">
-           <div className="flex h-[6rem] gap-5">
+        <div className="relative bottom-[60px] flex justify-center ">
+          <div className="flex h-[6rem] gap-5">
             {films.map((film, i) => (
               <img
                 key={i}
@@ -23,11 +23,10 @@ export default function Footer() {
               />
             ))}
           </div>
-          
-        </div> */}
-        <div className="relative bottom-32 flex justify-center">
-          <CarouselFooter />
         </div>
+        {/* <div className="relative bottom-32 flex justify-center">
+          <CarouselFooter />
+        </div>*/}
       </footer>
     </>
   );
