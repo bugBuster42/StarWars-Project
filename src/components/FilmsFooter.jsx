@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ModalFooter from './ModalFooter';
 import getInfo from './fetch/getInfo';
+import Loading from './Loading';
 
 const films = [
   './movie1.jpeg',
@@ -13,6 +14,7 @@ const films = [
 
 export default function FilmsFooter() {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedFilm, setSelectedFilm] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -23,6 +25,7 @@ export default function FilmsFooter() {
     getInfo(url, controller)
       .then((data) => {
         setMovies(data.results);
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -33,29 +36,32 @@ export default function FilmsFooter() {
     };
   }, [isModalVisible]);
 
-  const toggleModal = (i, image) => {
-    setSelectedFilm(movies[i]);
+  const toggleModal = (i) => {
     setModalVisible(true);
-    setSelectedImage(image);
+    setSelectedFilm(movies[i]);
+    setSelectedImage(films[i]);
   };
 
   const closeModal = () => {
-    setSelectedFilm(null);
     setModalVisible(false);
   };
 
   return (
     <>
       <div className="flex h-[6rem] gap-2">
-        {films.map((film, i) => (
-          <img
-            key={i}
-            src={film}
-            alt={`image de ${film}`}
-            onClick={() => toggleModal(i, film)}
-            className="relative object-cover duration-500 hover:bottom-[20px] hover:mx-10 hover:shadow hover:shadow-stone-500 hover:scale-[2]"
-          />
-        ))}
+        {loading ? (
+          <Loading />
+        ) : (
+          movies.map((film, i) => (
+            <img
+              key={i}
+              src={films[i]}
+              alt={`image de ${film}`}
+              onClick={() => toggleModal(i)}
+              className="relative object-cover duration-500 hover:bottom-[20px] hover:mx-10 hover:shadow hover:shadow-stone-500 hover:scale-[2]"
+            />
+          ))
+        )}
       </div>
 
       {isModalVisible && selectedFilm && (
