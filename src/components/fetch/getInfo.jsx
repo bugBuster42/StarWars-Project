@@ -1,5 +1,8 @@
 const getInfo = async (param, controller) => {
-  const res = await fetch(param, { signal: controller.signal });
+  const res = await fetch(param, {
+    signal: controller.signal,
+    cache: 'force-cache',
+  });
   return res.json();
 };
 
