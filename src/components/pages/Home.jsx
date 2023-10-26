@@ -10,11 +10,32 @@ export default function Home() {
           image="image1.jpg"
           name="Characters"
           role="Rôle Characters"
+          fallback="transport-placeholder.png"
         />
-        <SmallCard image="image2.jpg" name="Ships" role="Rôle Ships" />
-        <SmallCard image="image3.jpg" name="Vehicles" role="Rôle Vehicles" />
-        <SmallCard image="image4.jpg" name="Species" role="Rôle Species" />
-        <SmallCard image="image5.jpg" name="Planets" role="Rôle Planets" />
+        <SmallCard
+          image="image2.jpg"
+          name="Ships"
+          role="Rôle Ships"
+          fallback="transport-placeholder.png"
+        />
+        <SmallCard
+          image="image3.jpg"
+          name="Vehicles"
+          role="Rôle Vehicles"
+          fallback="transport-placeholder.png"
+        />
+        <SmallCard
+          image="image4.jpg"
+          name="Species"
+          role="Rôle Species"
+          fallback="transport-placeholder.png"
+        />
+        <SmallCard
+          image="image5.jpg"
+          name="Planets"
+          role="Rôle Planets"
+          fallback="transport-placeholder.png"
+        />
       </div>
     </>
   );
