@@ -1,14 +1,12 @@
 export default function ModalFooter({ film = [], bool, close, image }) {
   return (
     <>
-      {bool && (
+      {bool ? (
         <>
           <div
             className="absolute z-[80] h-screen w-screen -translate-x-[0rem] -translate-y-[48.5rem]"
             onClick={close}
-          >
-            {' '}
-          </div>
+          ></div>
           <div className="absolute left-1/2 z-[100] w-auto backdrop-blur-3xl -translate-x-1/2 -translate-y-[43em]">
             <div className="rounded-lg border-2 border-primary text-font-color shadow dark:bg-gray-700">
               <div className="flex items-start justify-between rounded-t border-b p-4">
@@ -44,13 +42,13 @@ export default function ModalFooter({ film = [], bool, close, image }) {
                       <span className="uppercase">{film.release_date}</span>
                     </li>
                   </ul>
-                  <p className="text-lg leading-7 ">{film.opening_crawl}</p>
+                  <p className="text-lg leading-7">{film.opening_crawl}</p>
                 </div>
               </div>
             </div>
           </div>
         </>
-      )}
+      ) : null}
     </>
   );
 }

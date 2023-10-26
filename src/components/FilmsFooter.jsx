@@ -3,12 +3,12 @@ import ModalFooter from './ModalFooter';
 import getInfo from './fetch/getInfo';
 
 const films = [
-  '/movie1.jpeg',
-  '/movie2.jpg',
-  '/movie3.jpg',
-  '/movie4.jpg',
-  '/movie5.jpg',
-  '/movie6.jpg',
+  '/movie1.png',
+  '/movie2.png',
+  '/movie3.png',
+  '/movie4.png',
+  '/movie5.png',
+  '/movie6.png',
 ];
 
 export default function FilmsFooter() {
@@ -61,14 +61,14 @@ export default function FilmsFooter() {
             ))}
       </div>
 
-      {isModalVisible && selectedFilm && (
+      {isModalVisible && selectedFilm ? (
         <ModalFooter
           film={selectedFilm}
           bool={true}
           close={closeModal}
           image={selectedImage}
         />
-      )}
+      ) : null}
     </>
   );
 }
