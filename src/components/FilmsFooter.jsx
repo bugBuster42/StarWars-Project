@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import ModalFooter from './ModalFooter';
 import getInfo from './fetch/getInfo';
-import Loading from './Loading';
 
 const films = [
-  './movie1.jpeg',
-  './movie2.jpg',
-  './movie3.jpg',
-  './movie4.jpg',
+  '/movie1.jpeg',
+  '/movie2.jpg',
+  '/movie3.jpg',
+  '/movie4.jpg',
   '/movie5.jpg',
   '/movie6.jpg',
 ];
