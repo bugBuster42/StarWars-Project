@@ -15,20 +15,22 @@ export default function CharacterScrollingCard() {
       try {
         const data = await getInfo(url, controller);
 
-        data.results.forEach((Character) => {
+        const newCharactersData = data.results.map((Character) => {
           const id = parseInt(
             Character.url.split('people/')[1].replace('/', ''),
           );
           const imageUrl = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
 
           if (id <= 10) setLoading(false);
-
-          setCharactersData((prev) => [
-            ...prev,
-            { name: Character.name, image: imageUrl, height: Character.height },
-          ]);
-          loadedCount++;
+          return {
+            name: Character.name,
+            image: imageUrl,
+            height: Character.height,
+          };
         });
+        setCharactersData((prev) => [...prev, ...newCharactersData]);
+
+        loadedCount++;
 
         if (data.next && loadedCount < 80) {
           fetchCharacters(data.next);
@@ -50,7 +52,7 @@ export default function CharacterScrollingCard() {
   }
 
   return (
-    <div className="cards-perspective flex h-[40vh] justify-center">
+    <div className="starWars-perspective flex h-[40vh] justify-center">
       <div className="hide-scrollbar mx-auto mt-[-980px] flex w-2/3 flex-wrap justify-center gap-3 overflow-y-scroll scale-90">
         <div className="h-[990px] w-full"></div>
         {charactersData.map((character, index) => {
@@ -66,6 +68,7 @@ export default function CharacterScrollingCard() {
                 image={character.image}
                 name={character.name}
                 role={`Size : ${character.height} cm`}
+                fallback="/transport-placeholder.png"
               />
             </div>
           );

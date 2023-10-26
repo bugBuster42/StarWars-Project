@@ -27,10 +27,7 @@
     );
   }
 
-  .perspective {
-    perspective: 350px;
-  }
-  .cards-perspective {
+  .starWars-perspective {
     transform: perspective(350px) rotateX(35deg);
   }
 
