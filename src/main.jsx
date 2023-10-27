@@ -23,7 +23,7 @@ const router = createBrowserRouter(
         <Route index element={<Home />} />
         <Route path="characters" element={<Characters />} />
         <Route path="species" element={<Species />} />
-        <Route path="ships-vehicules" element={<Transports />} />
+        <Route path="ships-vehicles" element={<Transports />} />
         <Route path="planets" element={<Planets />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>

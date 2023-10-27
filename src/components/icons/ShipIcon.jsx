@@ -1,7 +1,7 @@
 export default function ShipIcon() {
   return (
     <svg
-      className="transition-colors duration-[400ms] group-hover:text-[#FFC500]"
+      className="transition-colors duration-[400ms] group-hover:text-text-yellow"
       width="30px"
       height="30px"
       viewBox="0 0 96 96"
