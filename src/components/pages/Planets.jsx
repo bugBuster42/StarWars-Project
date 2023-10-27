@@ -3,6 +3,7 @@ import CarouselPlanets from '../CarouselPlanets';
 import getInfo from '../fetch/getInfo';
 import PaginationButton from '../PaginationButton';
 import Loading from '../Loading';
+import Star from '../Star';
 
 export default function Planets() {
   const [planets, setPlanets] = useState([]);
@@ -44,6 +45,10 @@ export default function Planets() {
         </div>
       </div>
       {loading ? <Loading /> : <CarouselPlanets planets={planets} />}
+      <Star width="28" bottom="40" left="28" />
+      <Star width="14" top="32" right="56" />
+      <Star width="14" bottom="80" right="96" />
+      <Star width="20" top="96" left="96" />
     </>
   );
 }
