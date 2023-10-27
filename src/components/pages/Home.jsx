@@ -3,6 +3,7 @@ import getInfo from '../fetch/getInfo';
 import Loading from '../Loading';
 import HomeScrollingText from '../HomeScrollingText';
 import Smallcard from '../SmallCard';
+import Star from '../Star';
 
 const categories = {
   people: 83,
@@ -104,6 +105,10 @@ export default function Home() {
           );
         })}
       </div>
+      <Star width="40" top="96" right="8" />
+      <Star top="24" left="28" />
+      <Star width="32" bottom="20" left="4" />
+      <Star width="16" top="2" right="80" />
     </>
   );
 }

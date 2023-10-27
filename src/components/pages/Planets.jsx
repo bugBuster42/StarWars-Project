@@ -45,10 +45,10 @@ export default function Planets() {
         </div>
       </div>
       {loading ? <Loading /> : <CarouselPlanets planets={planets} />}
-      <Star width="28" bottom="40" left="28" />
-      <Star width="14" top="32" right="56" />
-      <Star width="14" bottom="80" right="96" />
-      <Star width="20" top="96" left="96" />
+      <Star width="32" bottom="20" left="96" />
+      <Star width="12" top="44" left="44" />
+      <Star width="28" bottom="80" right="[42rem]" />
+      <Star width="24" top="20" right="96" />
     </>
   );
 }
