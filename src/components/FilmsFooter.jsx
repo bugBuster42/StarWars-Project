@@ -64,7 +64,6 @@ export default function FilmsFooter() {
       {isModalVisible && selectedFilm ? (
         <ModalFooter
           film={selectedFilm}
-          bool={true}
           close={closeModal}
           image={selectedImage}
         />
