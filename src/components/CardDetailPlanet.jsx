@@ -19,8 +19,8 @@ export default function CardDetailPlanet({ planet }) {
 
   useEffect(() => {
     const controller = new AbortController();
+    const promises = residents.map((url) => getInfo(url, controller));
     const fetchResidentData = async () => {
-      const promises = residents.map((url) => getInfo(url, controller));
       try {
         const responses = await Promise.all(promises);
         const names = responses.map((res) => res.name);
