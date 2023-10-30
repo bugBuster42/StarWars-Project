@@ -1,11 +1,11 @@
-import useGetArray from '../hooks/useGetArray';
+import useFetchByArray from '../hooks/useFetchByArray';
 
 export default function ModalFooter({ film = [], close, image }) {
-  const characters = useGetArray(Object.values(film)[6]);
-  const planets = useGetArray(Object.values(film)[7]);
-  const starships = useGetArray(Object.values(film)[8]);
-  const vehicles = useGetArray(Object.values(film)[9]);
-  const species = useGetArray(Object.values(film)[10]);
+  const characters = useFetchByArray(film.characters);
+  const planets = useFetchByArray(film.planets);
+  const starships = useFetchByArray(film.starships);
+  const vehicles = useFetchByArray(film.vehicles);
+  const species = useFetchByArray(film.species);
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function ModalFooter({ film = [], close, image }) {
               <p className="text-lg leading-7">{film.opening_crawl}</p>
               <ul className="flex flex-col gap-5">
                 <li>
-                  <span className="font-bold uppercase">Characters :</span>
+                  <span className="font-bold uppercase">Characters:</span>
                   <ul>
                     {characters.map((a, i) => (
                       <li key={i}>{a.name}</li>
@@ -55,7 +55,7 @@ export default function ModalFooter({ film = [], close, image }) {
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Planets :</span>
+                  <span className="font-bold uppercase"> Planets:</span>
                   <ul>
                     {planets.map((a, i) => (
                       <li key={i}>{a.name}</li>
@@ -63,7 +63,7 @@ export default function ModalFooter({ film = [], close, image }) {
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Starships :</span>
+                  <span className="font-bold uppercase"> Starships:</span>
                   <ul>
                     {starships.map((a, i) => (
                       <li key={i}>{a.name}</li>
@@ -71,7 +71,7 @@ export default function ModalFooter({ film = [], close, image }) {
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Vehicles :</span>
+                  <span className="font-bold uppercase"> Vehicles:</span>
                   <ul>
                     {vehicles.map((a, i) => (
                       <li key={i}>{a.name}</li>
@@ -79,7 +79,7 @@ export default function ModalFooter({ film = [], close, image }) {
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Species :</span>
+                  <span className="font-bold uppercase"> Species:</span>
                   <ul>
                     {species.map((a, i) => (
                       <li key={i}>{a.name}</li>
