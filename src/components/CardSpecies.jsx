@@ -6,7 +6,6 @@ export default function CardSpecies({ species = [] }) {
   const [cardDetail, setCardDetail] = useState(0);
   const [imgCard, setImgCard] = useState('');
 
-  console.log(species);
   return (
     <>
       <div className="mb-32 mt-10 flex flex-wrap justify-center gap-5 align-middle">
