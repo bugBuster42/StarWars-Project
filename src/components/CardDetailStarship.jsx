@@ -19,11 +19,10 @@ export default function CardDetailStarship({ starship, img }) {
                 <img src="/card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 [backface-visibility:hidden] group-hover:[transform:rotateY(180deg)]">
                   <img
-                    src={
-                      img
-                        ? `https://starwars-visualguide.com/assets/img/starship/${img}.jpg`
-                        : '/transport-placeholder.png'
-                    }
+                    src={`https://starwars-visualguide.com/assets/img/starship/${img}.jpg`}
+                    onError={(e) => {
+                      e.target.src = '/transport-placeholder.png';
+                    }}
                     alt="starship"
                     className="z-10 h-52 w-40 object-cover"
                   />
