@@ -27,7 +27,7 @@
     );
   }
 
-  .starWars-perspective {
+  .starWarsOpeningCrawlEffect {
     transform: perspective(350px) rotateX(35deg);
   }
 
