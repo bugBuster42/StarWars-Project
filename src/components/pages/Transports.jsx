@@ -29,7 +29,7 @@ export default function Transports() {
               setTransport(false);
             }}
           >
-            Vehicule
+            Vehicles
           </button>
         </div>
         {transport ? (
