@@ -52,7 +52,7 @@ export default function CharacterScrollingCard() {
   }
 
   return (
-    <div className="starWarsOpeningCrawlEffect flex h-[40vh] justify-center">
+    <div className="star-wars-opening-crawl-effect flex h-[40vh] justify-center">
       <div className="hide-scrollbar mx-auto mt-[-980px] flex w-2/3 flex-wrap justify-center gap-3 overflow-y-scroll scale-90">
         <div className="h-[990px] w-full"></div>
         {charactersData.map((character, index) => {
