@@ -1,4 +1,4 @@
-export default function CardDetailSpecie({ specie }) {
+export default function CardDetailSpecie({ specie, img }) {
   const {
     name,
     classification,
@@ -19,7 +19,7 @@ export default function CardDetailSpecie({ specie }) {
                 <img src="/card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 [backface-visibility:hidden] group-hover:[transform:rotateY(180deg)]">
                   <img
-                    src="/Chewbacca.jpeg"
+                    src={`https://starwars-visualguide.com/assets/img/species/${img}.jpg`}
                     alt="species"
                     className="z-10 h-52 w-40 object-cover"
                   />

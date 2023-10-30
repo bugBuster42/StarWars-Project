@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import CardDetailStarship from './CardDetailStarship';
 import Smallcard from './SmallCard';
 import { motion } from 'framer-motion';
 
@@ -12,13 +14,22 @@ export default function TransportContent({
   object,
   fallback,
 }) {
+  const [cardDetail, setCardDetail] = useState(0);
+  const [imgCard, setImgCard] = useState('');
+
   return (
     <>
       <div>
         {transports
           .filter((x) => x !== null)
           .map((transport, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              onClick={() => {
+                setCardDetail(index);
+                setImgCard(transport.url.split('/')[5]);
+              }}
+            >
               <motion.div
                 key={index}
                 initial={{
@@ -50,6 +61,7 @@ export default function TransportContent({
             </div>
           ))}
       </div>
+      <CardDetailStarship starship={transports[cardDetail]} img={imgCard} />
     </>
   );
 }

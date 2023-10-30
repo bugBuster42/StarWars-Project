@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import getInfo from './fetch/getInfo';
 
-export default function CardDetailPlanet({ planet }) {
+export default function CardDetailPlanet({ planet, img }) {
   const {
     name,
     rotation_period,
@@ -46,7 +46,11 @@ export default function CardDetailPlanet({ planet }) {
                 <img src="/card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 [backface-visibility:hidden] group-hover:[transform:rotateY(180deg)]">
                   <img
-                    src="/placeholder-planet.png"
+                    src={
+                      img
+                        ? `https://starwars-visualguide.com/assets/img/planets/${img}.jpg`
+                        : '/placeholder-planet.png'
+                    }
                     alt="planet"
                     className="z-10 h-40 w-40 rounded-full object-cover"
                   />

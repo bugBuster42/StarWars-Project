@@ -1,4 +1,4 @@
-export default function CardDetailStarship({ starship }) {
+export default function CardDetailStarship({ starship, img }) {
   const {
     name,
     model,
@@ -8,11 +8,10 @@ export default function CardDetailStarship({ starship }) {
     consumables,
     hyperdrive_rating,
     MGLT,
-    image,
   } = starship;
   return (
     <>
-      <div className="flex justify-center">
+      <div className="mt-[28rem] flex justify-center">
         <div className="bg-[url('/card-support.png')] bg-no-repeat">
           <div className="group h-80 w-full">
             <div className="relative left-[64px] top-[33px] h-[236] w-[682px] origin-center transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
@@ -20,7 +19,11 @@ export default function CardDetailStarship({ starship }) {
                 <img src="/card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 [backface-visibility:hidden] group-hover:[transform:rotateY(180deg)]">
                   <img
-                    src={image}
+                    src={
+                      img
+                        ? `https://starwars-visualguide.com/assets/img/starship/${img}.jpg`
+                        : '/transport-placeholder.png'
+                    }
                     alt="starship"
                     className="z-10 h-52 w-40 object-cover"
                   />

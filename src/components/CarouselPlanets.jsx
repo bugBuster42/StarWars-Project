@@ -5,6 +5,7 @@ export default function CarouselPlanets({ planets }) {
   const [currDeg, setCurrDeg] = useState(0);
   const [current, setCurrent] = useState(0);
   const [cardDetail, setCardDetail] = useState(0);
+  const [imgCard, setImgCard] = useState('');
 
   const slide = (i) => {
     setCurrDeg((currDeg) => currDeg - 36 * (i - current));
@@ -31,6 +32,7 @@ export default function CarouselPlanets({ planets }) {
                   onClick={() => {
                     slide(i);
                     setCardDetail(i);
+                    setImgCard(p.url.split('/')[5]);
                   }}
                   className={`${
                     current === i ? 'shadow-xl shadow-yellow-200/30' : ''
@@ -43,7 +45,7 @@ export default function CarouselPlanets({ planets }) {
           </div>
         </div>
       </div>
-      <CardDetailPlanet planet={planets[cardDetail]} />
+      <CardDetailPlanet planet={planets[cardDetail]} img={imgCard} />
     </>
   );
 }
