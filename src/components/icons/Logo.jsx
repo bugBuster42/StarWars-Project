@@ -1,7 +1,7 @@
 export default function Logo() {
   return (
     <svg
-      className="ml-[40px] mt-[-37px] w-1/4 text-white transition-colors duration-[400ms] hover:text-[#FFC500]"
+      className="ml-[40px] mt-[-37px] w-1/4 text-white transition-colors duration-[400ms] hover:text-text-yellow"
       width="361"
       height="135"
       viewBox="0 0 361 156"
