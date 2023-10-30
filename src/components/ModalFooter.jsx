@@ -1,13 +1,12 @@
-export default function ModalFooter({
-  film = [],
-  close,
-  image,
-  characters,
-  planets,
-  starships,
-  vehicles,
-  species,
-}) {
+import useGetArray from '../hooks/useGetArray';
+
+export default function ModalFooter({ film = [], close, image }) {
+  const characters = useGetArray(Object.values(film)[6]);
+  const planets = useGetArray(Object.values(film)[7]);
+  const starships = useGetArray(Object.values(film)[8]);
+  const vehicles = useGetArray(Object.values(film)[9]);
+  const species = useGetArray(Object.values(film)[10]);
+
   return (
     <>
       <div

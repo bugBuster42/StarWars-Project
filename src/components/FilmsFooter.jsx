@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import ModalFooter from './ModalFooter';
 import getInfo from './fetch/getInfo';
-import useGetArray from '../hooks/useGetArray';
 
 const films = [
   '/movie1.webp',
@@ -14,11 +13,6 @@ const films = [
 
 export default function FilmsFooter() {
   const [movies, setMovies] = useState([]);
-  const [characters, setCharacters] = useState([]);
-  const [planets, setPlanets] = useState([]);
-  const [starships, setStarships] = useState([]);
-  const [vehicles, setVehicles] = useState([]);
-  const [species, setSpecies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedFilm, setSelectedFilm] = useState(null);
@@ -41,21 +35,10 @@ export default function FilmsFooter() {
     };
   }, [isModalVisible]);
 
-  const character = useGetArray(movies.map((a) => a.characters));
-  const planet = useGetArray(movies.map((a) => a.planets));
-  const starship = useGetArray(movies.map((a) => a.starships));
-  const vehicle = useGetArray(movies.map((a) => a.vehicles));
-  const specie = useGetArray(movies.map((a) => a.species));
-
   const toggleModal = (i) => {
     setModalVisible(true);
     setSelectedFilm(movies[i]);
     setSelectedImage(films[i]);
-    setCharacters(character[i]);
-    setPlanets(planet[i]);
-    setStarships(starship[i]);
-    setVehicles(vehicle[i]);
-    setSpecies(specie[i]);
   };
 
   const closeModal = () => {
@@ -83,11 +66,6 @@ export default function FilmsFooter() {
           film={selectedFilm}
           close={closeModal}
           image={selectedImage}
-          characters={characters}
-          planets={planets}
-          starships={starships}
-          vehicles={vehicles}
-          species={species}
         />
       ) : null}
     </>
