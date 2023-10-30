@@ -16,7 +16,7 @@ const fetchPlus = (url, options = {}, retries) =>
     });
 
 const getInfo = async (param, controller) => {
-  const res = await fetch(
+  const res = await fetchPlus(
     param,
     {
       signal: controller.signal,
