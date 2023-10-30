@@ -15,17 +15,17 @@ export default function CharacterScrollingCard() {
       try {
         const data = await getInfo(url, controller);
 
-        const newCharactersData = data.results.map((Character) => {
+        const newCharactersData = data.results.map((character) => {
           const id = parseInt(
-            Character.url.split('people/')[1].replace('/', ''),
+            character.url.split('people/')[1].replace('/', ''),
           );
           const imageUrl = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
 
           if (id <= 10) setLoading(false);
           return {
-            name: Character.name,
+            name: character.name,
             image: imageUrl,
-            height: Character.height,
+            height: character.height,
           };
         });
         setCharactersData((prev) => [...prev, ...newCharactersData]);
