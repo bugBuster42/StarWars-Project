@@ -6,7 +6,6 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-
 import './main.css';
 import Root from './components/Root';
 import Home from './components/pages/Home';
