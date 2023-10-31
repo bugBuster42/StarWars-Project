@@ -20,7 +20,7 @@ export default function ModalFooter({ film = [], close, image }) {
           <div className="grid grid-cols-2 gap-5 p-10 ">
             <img
               src={image}
-              alt={`image de ${image}`}
+              alt={`${image}`}
               className="relative w-80 object-cover shadow shadow-stone-500"
             />
             <div className="flex flex-col gap-5">
