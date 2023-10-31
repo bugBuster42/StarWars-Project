@@ -52,9 +52,6 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'fond-card-detail': "url('./fond-card-detail.png')",
-      },
       colors: {
         'font-color': '#FFFFFF',
         primary: '#A58363',
