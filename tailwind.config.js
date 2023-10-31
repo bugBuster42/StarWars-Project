@@ -37,6 +37,7 @@ export default {
     'right-56',
     'right-8',
     'right-[42rem]',
+    'right-[38rem]',
     'border-fluo-green',
     'bg-light-green',
     'shadow-green',
