@@ -29,6 +29,7 @@ export default function TransportContent({
                 setCardDetail(index);
                 setImgCard(transport.url.split('/')[5]);
               }}
+              className="cursor-pointer"
             >
               <motion.div
                 key={index}
