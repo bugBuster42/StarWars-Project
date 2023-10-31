@@ -2,7 +2,7 @@ export default function ModalFooter({ film = [], close, image }) {
   return (
     <>
       <div
-        className="absolute z-[80] h-screen w-screen -translate-x-[0rem] -translate-y-[48.5rem]"
+        className="absolute z-[80] h-screen w-screen -translate-y-[48.5rem]"
         onClick={close}
       ></div>
       <div className="absolute left-1/2 z-[100] w-auto backdrop-blur-3xl -translate-x-1/2 -translate-y-[43em]">
@@ -20,7 +20,7 @@ export default function ModalFooter({ film = [], close, image }) {
           <div className="grid grid-cols-2 gap-5 p-10 ">
             <img
               src={image}
-              alt={`${image}`}
+              alt={image}
               className="relative w-80 object-cover shadow shadow-stone-500"
             />
             <div className="flex flex-col gap-5">

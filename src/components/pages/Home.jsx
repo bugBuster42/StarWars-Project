@@ -62,7 +62,7 @@ export default function Home() {
     )
       .then((results) => {
         const randomData = {};
-        Object.keys(categories).forEach((category, index) => {
+        Object.keys(categories).map((category, index) => {
           randomData[category] = results[index];
         });
         setData(randomData);
