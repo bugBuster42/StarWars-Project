@@ -1,8 +1,13 @@
+import useFetchByArray from '../hooks/useFetchByArray';
 import ImageWithFallback from './ImageWithFallback';
+import { useEffect, useState } from 'react';
+import getInfo from './fetch/getInfo';
 
 export default function CardDetailSpecie({ specie, img }) {
   const {
     name,
+    people,
+    homeworld,
     classification,
     designation,
     average_height,
@@ -10,6 +15,36 @@ export default function CardDetailSpecie({ specie, img }) {
     average_lifespan,
     language,
   } = specie;
+
+  const [loading, setLoading] = useState(true);
+  const [fetchHomeworld, setFetchHomeworld] = useState(null);
+  const fetchPeople = useFetchByArray(people);
+  console.log(fetchPeople);
+  // const namesOfPeople = fetchPeople.map((a, index) => {
+  //   <span>{a.name}</span>;
+  // });
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const url = homeworld;
+        setLoading(true);
+        const data = await getInfo(url, controller);
+        setFetchHomeworld(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    })();
+
+    return () => {
+      controller.abort();
+    };
+  }, [homeworld]);
+
+  console.log(fetchHomeworld);
 
   return (
     <>
@@ -65,6 +100,14 @@ export default function CardDetailSpecie({ specie, img }) {
               <div className="absolute right-0 top-0 z-10 h-full w-full bg-primary/20 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <div className="flex min-h-full flex-col items-center justify-center">
                   <p>species</p>
+                  <p>
+                    homeworld :{' '}
+                    {loading ? null : <span>{fetchHomeworld.name}</span>}
+                  </p>
+                  <p>
+                    {/* {`People : ${namesOfPeople}`} */}
+                    <span>{people}</span>
+                  </p>
                 </div>
               </div>
             </div>
