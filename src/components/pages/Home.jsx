@@ -93,7 +93,7 @@ export default function Home() {
           const name = item?.name || '';
 
           return (
-            <div className key={category}>
+            <div key={category}>
               <h1>{category}</h1>
               <Smallcard
                 role={category}
