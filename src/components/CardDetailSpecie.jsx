@@ -19,10 +19,9 @@ export default function CardDetailSpecie({ specie, img }) {
   const [loading, setLoading] = useState(true);
   const [fetchHomeworld, setFetchHomeworld] = useState(null);
   const fetchPeople = useFetchByArray(people);
-  console.log(fetchPeople);
-  // const namesOfPeople = fetchPeople.map((a, index) => {
-  //   <span>{a.name}</span>;
-  // });
+  console.log({ fetchPeople });
+  const namesOfPeople = fetchPeople.map((a, i) => <li key={i}>{a.name}</li>);
+  console.log({ namesOfPeople });
 
   useEffect(() => {
     const controller = new AbortController();
@@ -105,7 +104,7 @@ export default function CardDetailSpecie({ specie, img }) {
                     {loading ? null : <span>{fetchHomeworld.name}</span>}
                   </p>
                   <p>
-                    {/* {`People : ${namesOfPeople}`} */}
+                    People :<ul>{loading ? null : { namesOfPeople }}</ul>
                     <span>{people}</span>
                   </p>
                 </div>
