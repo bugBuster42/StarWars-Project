@@ -8,6 +8,7 @@ export default {
     ...Array.from(Array(10).keys()).map((i) => `rotate-y-[${i * 36}deg]`),
     ...Array.from(Array(10).keys()).map((i) => `rotate-y-[-${i * 36}deg]`),
     'h-80',
+    'h-52',
     'h-48',
     'w-40',
     'w-36',

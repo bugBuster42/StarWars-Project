@@ -1,3 +1,5 @@
+import ImageWithFallback from './ImageWithFallback';
+
 export default function CardDetailSpecie({ specie, img }) {
   const {
     name,
@@ -18,13 +20,12 @@ export default function CardDetailSpecie({ specie, img }) {
               <div className="absolute z-10 h-full w-full bg-no-repeat">
                 <img src="/card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 [backface-visibility:hidden] group-hover:[transform:rotateY(180deg)]">
-                  <img
+                  <ImageWithFallback
+                    fallback={'/Chewbacca.jpeg'}
                     src={`https://starwars-visualguide.com/assets/img/species/${img}.jpg`}
-                    onError={(e) => {
-                      e.target.src = '/Chewbacca.jpeg';
-                    }}
-                    alt="species"
-                    className="z-10 h-52 w-40 object-cover"
+                    name={'species'}
+                    size={52}
+                    cardDetail={true}
                   />
                   <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
                     <p className="uppercase">{name}</p>

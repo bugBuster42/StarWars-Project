@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import getInfo from './fetch/getInfo';
+import ImageWithFallback from './ImageWithFallback';
 
 export default function CardDetailPlanet({ planet, img }) {
   const {
@@ -45,13 +46,13 @@ export default function CardDetailPlanet({ planet, img }) {
               <div className="absolute z-10 h-full w-full bg-no-repeat ">
                 <img src="/card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 [backface-visibility:hidden] group-hover:[transform:rotateY(180deg)]">
-                  <img
+                  <ImageWithFallback
+                    fallback={'/placeholder-planet.png'}
                     src={`https://starwars-visualguide.com/assets/img/planets/${img}.jpg`}
-                    onError={(e) => {
-                      e.target.src = '/placeholder-planet.png';
-                    }}
-                    alt="planet"
-                    className="z-10 h-40 w-40 rounded-full object-cover"
+                    name={'planet'}
+                    size={40}
+                    cardDetail={true}
+                    planet={true}
                   />
                   <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
                     <p className="uppercase">{name}</p>
