@@ -8,6 +8,7 @@ export default function CardDetailCharacter({ character }) {
     hair_color,
     skin_color,
     eye_color,
+    image,
   } = character;
   return (
     <>
@@ -19,8 +20,8 @@ export default function CardDetailCharacter({ character }) {
                 <img src="/card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 transition-all group-hover:[transform:rotateY(180deg)]">
                   <img
-                    src={character.image}
-                    alt={character.name}
+                    src={image}
+                    alt={name}
                     className="z-10 h-52 w-40 object-cover"
                   />
                   <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
