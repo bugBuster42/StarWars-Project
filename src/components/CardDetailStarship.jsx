@@ -30,6 +30,7 @@ export default function CardDetailStarship({ starship, img, object }) {
                     name={'starship'}
                     size={52}
                     cardDetail={true}
+                    starship={true}
                   />
                   <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
                     <p className="uppercase">{name}</p>
