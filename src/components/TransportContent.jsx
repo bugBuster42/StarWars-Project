@@ -3,10 +3,10 @@ import CardDetailStarship from './CardDetailStarship';
 import Smallcard from './SmallCard';
 import { motion } from 'framer-motion';
 
-const initialX = 0;
+const initialX = '70vw';
 
-const leftX = -2000;
-const rightX = 500;
+const leftX = '-20vw';
+const rightX = '92vw';
 const delay = [0, 2, 4, 6, 8];
 
 export default function TransportContent({
@@ -36,8 +36,7 @@ export default function TransportContent({
                   x: initialX,
                   position: 'absolute',
                   zIndex: 10 - index,
-                  top: 300,
-                  left: 1500,
+                  top: '330px',
                 }}
                 animate={[{ x: [initialX, leftX, rightX, initialX] }]}
                 transition={{
@@ -61,7 +60,13 @@ export default function TransportContent({
             </div>
           ))}
       </div>
-      <CardDetailStarship starship={transports[cardDetail]} img={imgCard} />
+      {transports[cardDetail] === undefined ? null : (
+        <CardDetailStarship
+          starship={transports[cardDetail]}
+          img={imgCard}
+          object={object}
+        />
+      )}
     </>
   );
 }
