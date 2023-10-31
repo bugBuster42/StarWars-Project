@@ -32,8 +32,8 @@
     transform: perspective(350px) rotateX(35deg);
   }
 
-  .animation-delay-40000 {
-    animation-delay: 40s;
+  .animation-delay-39000 {
+    animation-delay: 39s;
   }
 
   .hide-scrollbar::-webkit-scrollbar {

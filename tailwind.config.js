@@ -90,7 +90,7 @@ export default {
           },
         },
         'move-cards': {
-          '0%': { transform: 'translateY(1vh)' },
+          '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-15vh)' },
         },
       },
