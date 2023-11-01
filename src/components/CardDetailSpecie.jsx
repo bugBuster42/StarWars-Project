@@ -64,7 +64,7 @@ export default function CardDetailSpecie({ specie, img }) {
                     size={52}
                     cardDetail={true}
                   />
-                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
+                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-9 text-font-color">
                     <p className="uppercase">{name}</p>
                     <div className="flex flex-row space-x-8">
                       <div className="flex flex-col">
