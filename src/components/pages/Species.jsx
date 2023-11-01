@@ -64,7 +64,10 @@ export default function Species() {
             {new Array(apiPageCount).fill().map((a, index) => (
               <PaginationButton
                 key={index}
-                onClick={() => setActiveButton(index)}
+                onClick={() => {
+                  setActiveButton(index);
+                  setIsHidden(true);
+                }}
                 isActive={activeButton === index}
               />
             ))}
