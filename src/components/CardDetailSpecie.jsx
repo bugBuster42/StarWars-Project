@@ -69,31 +69,32 @@ export default function CardDetailSpecie({ specie, img }) {
                     <div className="flex flex-row space-x-8">
                       <div className="flex flex-col">
                         <p>
-                          classification{' '}
+                          Classification :{' '}
                           <span className="uppercase">{classification}</span>
                         </p>
                         <p>
-                          designation{' '}
+                          Designation :{' '}
                           <span className="uppercase">{designation}</span>
                         </p>
                         <p>
-                          average_height{' '}
+                          Average Height :{' '}
                           <span className="uppercase">{average_height}</span>
                         </p>
                       </div>
                       <div className="flex flex-col text-right">
                         <p>
-                          average_lifespan{' '}
+                          Average Lifespan :{' '}
                           <span className="uppercase">{average_lifespan}</span>
                         </p>
                         <p>
-                          language <span className="uppercase">{language}</span>
+                          Language :{' '}
+                          <span className="uppercase">{language}</span>
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row space-x-12">
                       <p>
-                        skin <span className="uppercase">{skin_colors}</span>
+                        Skin : <span className="uppercase">{skin_colors}</span>
                       </p>
                     </div>
                   </div>
@@ -101,18 +102,19 @@ export default function CardDetailSpecie({ specie, img }) {
               </div>
               <div className="absolute right-0 top-0 z-10 h-full w-full bg-primary/20 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <div className="flex min-h-full flex-col items-center justify-center">
-                  <p>species</p>
-                  <p>
-                    homeworld :{' '}
+                  <h1 className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
+                    Homeworld :{' '}
                     {fetchHomeworld ? (
                       <span>{fetchHomeworld.name}</span>
                     ) : (
                       'null'
                     )}
-                  </p>
-                  <p className="flex">
-                    People : <ul>{namesOfPeople}</ul>
-                  </p>
+                  </h1>
+                  <h1 className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
+                    <p className="flex">
+                      People : <ul>{namesOfPeople}</ul>
+                    </p>
+                  </h1>
                 </div>
               </div>
             </div>
