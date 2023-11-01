@@ -16,25 +16,30 @@ export default function CardDetailSpecie({ specie, img }) {
     language,
   } = specie;
 
-  const [loading, setLoading] = useState(true);
   const [fetchHomeworld, setFetchHomeworld] = useState(null);
+
   const fetchPeople = useFetchByArray(people);
-  console.log({ fetchPeople });
-  const namesOfPeople = fetchPeople.map((a, i) => <li key={i}>{a.name}</li>);
-  console.log({ namesOfPeople });
+
+  const namesOfPeople = fetchPeople.map((a, i) => (
+    <li className="pl-1" key={i}>
+      {a.name}
+    </li>
+  ));
 
   useEffect(() => {
     const controller = new AbortController();
+    const url = homeworld;
 
     (async () => {
-      try {
-        const url = homeworld;
-        setLoading(true);
-        const data = await getInfo(url, controller);
-        setFetchHomeworld(data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error);
+      if (url === null) {
+        setFetchHomeworld(null);
+      } else {
+        try {
+          const data = await getInfo(url, controller);
+          setFetchHomeworld(data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
       }
     })();
 
@@ -42,8 +47,6 @@ export default function CardDetailSpecie({ specie, img }) {
       controller.abort();
     };
   }, [homeworld]);
-
-  console.log(fetchHomeworld);
 
   return (
     <>
@@ -101,11 +104,14 @@ export default function CardDetailSpecie({ specie, img }) {
                   <p>species</p>
                   <p>
                     homeworld :{' '}
-                    {loading ? null : <span>{fetchHomeworld.name}</span>}
+                    {fetchHomeworld ? (
+                      <span>{fetchHomeworld.name}</span>
+                    ) : (
+                      'null'
+                    )}
                   </p>
-                  <p>
-                    People :<ul>{loading ? null : { namesOfPeople }}</ul>
-                    <span>{people}</span>
+                  <p className="flex">
+                    People : <ul>{namesOfPeople}</ul>
                   </p>
                 </div>
               </div>
