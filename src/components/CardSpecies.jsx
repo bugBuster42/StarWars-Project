@@ -2,14 +2,13 @@ import Smallcard from './SmallCard';
 import CardDetailSpecie from './CardDetailSpecie';
 import { useState } from 'react';
 
-export default function CardSpecies({ species = [] }) {
+export default function CardSpecies({ species = [], isHidden, setIsHidden }) {
   const [cardDetail, setCardDetail] = useState(0);
   const [imgCard, setImgCard] = useState('');
-  const [isHidden, setIsHidden] = useState(true);
 
   return (
     <>
-      <div className="mb-32 mt-10 flex flex-wrap justify-center gap-5 align-middle">
+      <div className="mb-16 mt-10 flex flex-wrap justify-center gap-5">
         {species.map((specie, selectedSpecie) => (
           <div
             className={

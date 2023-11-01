@@ -9,6 +9,7 @@ export default function Species() {
   const [activeButton, setActiveButton] = useState(0);
   const [apiPageCount, setApiPageCount] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -57,9 +58,9 @@ export default function Species() {
           src="/blue-star.png"
         />
       </div>
-      <div className="px-32 pt-36">
-        <div className="relative z-20 flex justify-end pb-5">
-          <div className="flex gap-2">
+      <div className="pt-36">
+        <div className="relative z-20 flex justify-center pb-5">
+          <div className="flex gap-2 translate-x-[650px]">
             {new Array(apiPageCount).fill().map((a, index) => (
               <PaginationButton
                 key={index}
@@ -70,7 +71,13 @@ export default function Species() {
           </div>
         </div>
 
-        {loading ? null : <CardSpecies species={species} />}
+        {loading ? null : (
+          <CardSpecies
+            isHidden={isHidden}
+            setIsHidden={setIsHidden}
+            species={species}
+          />
+        )}
       </div>
     </>
   );
