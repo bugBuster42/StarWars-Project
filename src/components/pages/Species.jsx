@@ -39,6 +39,24 @@ export default function Species() {
       <div className="absolute top-0 ml-72 flex justify-center">
         {loading ? <Loading mt={2} /> : null}
       </div>
+      <div>
+        <img
+          className={`fixed right-0 mr-24 w-11 animate-pulse`}
+          src="/blue-star.png"
+        />
+        <img
+          className={`fixed left-0 ml-20 mt-8 w-10 animate-pulse`}
+          src="/blue-star.png"
+        />
+        <img
+          className={`fixed right-0 top-0 mr-[960px] mt-12 w-7 animate-pulse`}
+          src="/blue-star.png"
+        />
+        <img
+          className={`fixed bottom-0 left-0 mb-20 ml-96 w-9 animate-pulse`}
+          src="/blue-star.png"
+        />
+      </div>
       <div className="px-32 pt-36">
         <div className="flex justify-end pb-5">
           <div className="flex gap-2">
@@ -51,22 +69,7 @@ export default function Species() {
             ))}
           </div>
         </div>
-        <img
-          className={`fixed right-0 mr-24 w-11 animate-pulse`}
-          src="/blue-star.png"
-        />
-        <img
-          className={`fixed left-0 ml-20 mt-[-175px] w-10 animate-pulse`}
-          src="/blue-star.png"
-        />
-        <img
-          className={`fixed right-0 top-0 mr-[960px] mt-28 w-7 animate-pulse`}
-          src="/blue-star.png"
-        />
-        <img
-          className={`fixed bottom-0 left-0 mb-20 ml-96 w-9 animate-pulse`}
-          src="/blue-star.png"
-        />
+
         {loading ? null : <CardSpecies species={species} />}
       </div>
     </>
