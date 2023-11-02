@@ -9,6 +9,7 @@ export default function Species() {
   const [activeButton, setActiveButton] = useState(0);
   const [apiPageCount, setApiPageCount] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -39,35 +40,47 @@ export default function Species() {
       <div className="absolute top-0 ml-72 flex justify-center">
         {loading ? <Loading mt={2} /> : null}
       </div>
-      <div className="px-32 pt-36">
-        <div className="flex justify-end pb-5">
-          <div className="flex gap-2">
-            {new Array(apiPageCount).fill().map((a, index) => (
-              <PaginationButton
-                key={index}
-                onClick={() => setActiveButton(index)}
-                isActive={activeButton === index}
-              />
-            ))}
-          </div>
-        </div>
+      <div>
         <img
           className={`fixed right-0 mr-24 w-11 animate-pulse`}
           src="/blue-star.png"
         />
         <img
-          className={`fixed left-0 ml-20 mt-[-175px] w-10 animate-pulse`}
+          className={`fixed left-0 ml-20 mt-8 w-10 animate-pulse`}
           src="/blue-star.png"
         />
         <img
-          className={`fixed right-0 top-0 mr-[960px] mt-28 w-7 animate-pulse`}
+          className={`fixed right-0 top-0 mr-[960px] mt-12 w-7 animate-pulse`}
           src="/blue-star.png"
         />
         <img
           className={`fixed bottom-0 left-0 mb-20 ml-96 w-9 animate-pulse`}
           src="/blue-star.png"
         />
-        {loading ? null : <CardSpecies species={species} />}
+      </div>
+      <div className="pt-36">
+        <div className="relative z-20 flex justify-center pb-5">
+          <div className="flex gap-2 translate-x-[650px]">
+            {new Array(apiPageCount).fill().map((a, index) => (
+              <PaginationButton
+                key={index}
+                onClick={() => {
+                  setActiveButton(index);
+                  setIsHidden(true);
+                }}
+                isActive={activeButton === index}
+              />
+            ))}
+          </div>
+        </div>
+
+        {loading ? null : (
+          <CardSpecies
+            isHidden={isHidden}
+            setIsHidden={setIsHidden}
+            species={species}
+          />
+        )}
       </div>
     </>
   );
