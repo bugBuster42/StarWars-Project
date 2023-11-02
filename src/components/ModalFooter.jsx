@@ -10,7 +10,7 @@ export default function ModalFooter({ film = [], close, image }) {
   return (
     <>
       <div
-        className="absolute z-[80] h-screen w-screen -translate-x-[0rem] -translate-y-[100%]"
+        className="absolute z-[80] h-screen w-screen -translate-x-[0rem] -translate-y-full"
         onClick={close}
       ></div>
       <div className="absolute left-1/2 z-[100] h-[650px] w-auto backdrop-blur-3xl -translate-x-1/2 -translate-y-[110%]">
