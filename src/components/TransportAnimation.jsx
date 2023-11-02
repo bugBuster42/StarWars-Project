@@ -33,7 +33,7 @@ export default function TransportAnimation({
                 x: initialX,
                 position: 'absolute',
                 zIndex: 10 - index,
-                top: '330px',
+                top: '90px',
               }}
               animate={[{ x: [initialX, leftX, rightX, initialX] }]}
               transition={{

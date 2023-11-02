@@ -94,7 +94,7 @@ export default function Home() {
     <>
       <div className="relative">
         {loading ? (
-          <div className="absolute -top-16 ml-72 flex justify-center">
+          <div className="absolute -top-[18px] ml-72 flex justify-center">
             <Loading />
           </div>
         ) : null}
@@ -112,7 +112,7 @@ export default function Home() {
 
             return (
               <div
-                className="relative transition-transform duration-500 ease-in-out hover:-translate-y-5 hover:scale-105"
+                className="relative mb-20 transition-transform duration-500 ease-in-out hover:-translate-y-5 hover:scale-105"
                 key={category}
               >
                 <Link to={getCategoryUrl(category)}>
