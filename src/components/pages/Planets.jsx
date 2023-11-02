@@ -14,6 +14,7 @@ export default function Planets() {
   useEffect(() => {
     const controller = new AbortController();
     const url = `https://swapi.dev/api/planets/?page=${page}`;
+    setLoading(true);
     getInfo(url, controller)
       .then((data) => {
         setPlanets(data.results);
