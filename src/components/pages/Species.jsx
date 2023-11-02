@@ -59,7 +59,7 @@ export default function Species() {
         />
       </div>
       <div className="pt-1">
-        <div className="flex justify-center pb-5">
+        <div className="relative left-[46%] z-20 flex w-[200px] justify-center pb-5">
           <div className="flex gap-2">
             {new Array(apiPageCount).fill().map((a, index) => (
               <PaginationButton
