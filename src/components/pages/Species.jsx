@@ -37,7 +37,7 @@ export default function Species() {
 
   return (
     <>
-      <div className="absolute top-[18px] ml-72 flex justify-center">
+      <div className="absolute top-[9px] ml-72 flex justify-center">
         {loading ? <Loading /> : null}
       </div>
       <div>
@@ -59,7 +59,7 @@ export default function Species() {
         />
       </div>
       <div className="pt-1">
-        <div className="relative z-20 flex justify-center pb-5">
+        <div className="flex justify-center pb-5">
           <div className="flex gap-2">
             {new Array(apiPageCount).fill().map((a, index) => (
               <PaginationButton
