@@ -56,7 +56,7 @@ export default function FilmsFooter() {
                 src={films[i]}
                 alt={`image de ${film}`}
                 onClick={() => toggleModal(i)}
-                className="relative object-cover duration-500 hover:bottom-[20px] hover:mx-10 hover:shadow hover:shadow-stone-500 hover:scale-[2]"
+                className="relative cursor-pointer object-cover duration-500 hover:bottom-[20px] hover:mx-10 hover:shadow hover:shadow-stone-500 hover:scale-[2]"
               />
             ))}
       </div>
