@@ -1,6 +1,7 @@
+import useFetchByArray from '../hooks/useFetchByArray';
 import ImageWithFallback from './ImageWithFallback';
 
-export default function CardDetailStarship({ starship, img }) {
+export default function CardDetailStarship({ starship, img, object }) {
   const {
     name,
     model,
@@ -11,6 +12,9 @@ export default function CardDetailStarship({ starship, img }) {
     hyperdrive_rating,
     MGLT,
   } = starship;
+
+  const pilots = useFetchByArray(starship.pilots);
+
   return (
     <>
       <div className="mt-[28rem] flex justify-center">
@@ -22,10 +26,11 @@ export default function CardDetailStarship({ starship, img }) {
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 [backface-visibility:hidden] group-hover:[transform:rotateY(180deg)]">
                   <ImageWithFallback
                     fallback={'/transport-placeholder.png'}
-                    src={`https://starwars-visualguide.com/assets/img/starships/${img}.jpg`}
+                    src={`https://starwars-visualguide.com/assets/img/${object}/${img}.jpg`}
                     name={'starship'}
                     size={52}
                     cardDetail={true}
+                    starship={true}
                   />
                   <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
                     <p className="uppercase">{name}</p>
@@ -67,7 +72,12 @@ export default function CardDetailStarship({ starship, img }) {
               </div>
               <div className="absolute right-0 top-0 z-10 h-full w-full bg-primary/20 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <div className="flex min-h-full flex-col items-center justify-center">
-                  <p>starship</p>
+                  <ul className="mt-3">
+                    <li className="uppercase">Pilots:</li>
+                    {pilots.length === 0
+                      ? 'no pilots'
+                      : pilots.map((a, i) => <li key={i}>{a.name}</li>)}
+                  </ul>
                 </div>
               </div>
             </div>
