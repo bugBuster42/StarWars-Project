@@ -46,7 +46,7 @@ export default function CardDetailCharacter({ character }) {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center scale-125">
         <div className="bg-[url('/card-support.png')] bg-no-repeat">
           <div className="group h-80 w-full">
             <div className="relative left-[64px] top-[33px] h-[236] w-[682px] origin-center transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
