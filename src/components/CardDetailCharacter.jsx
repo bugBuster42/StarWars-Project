@@ -96,7 +96,7 @@ export default function CardDetailCharacter({ character }) {
                 <div className="flex">
                   <div className="flex min-h-full w-1/2 flex-col justify-center">
                     <p className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
-                      Homeworld :{' '}
+                      Homeworld:{' '}
                       {homeworldData ? (
                         <span>{homeworldData.name}</span>
                       ) : (
@@ -104,7 +104,7 @@ export default function CardDetailCharacter({ character }) {
                       )}
                     </p>
                     <p className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
-                      Species :{' '}
+                      Species:{' '}
                       {speciesData ? (
                         <ul>
                           {speciesData.map((species) => (
@@ -117,7 +117,7 @@ export default function CardDetailCharacter({ character }) {
                     </p>
 
                     <p className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
-                      Starships :{' '}
+                      Starships:{' '}
                       {starshipsData ? (
                         <ul>
                           {starshipsData.map((starship) => (
@@ -131,7 +131,7 @@ export default function CardDetailCharacter({ character }) {
                   </div>
                   <div className="w-1/2">
                     <div className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
-                      <span>Films :</span>
+                      <span>Films:</span>
                       {filmsData ? (
                         <ul>
                           {filmsData.map((film) => (
