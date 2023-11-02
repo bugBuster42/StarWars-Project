@@ -63,31 +63,30 @@ export default function CardDetailCharacter({ character }) {
                     <div className="flex flex-row space-x-8">
                       <div className="flex flex-col">
                         <p>
-                          gender <span className="uppercase">: {gender}</span>
+                          gender<span className="uppercase">: {gender}</span>
                         </p>
                         <p>
-                          mass <span className="uppercase">: {mass} kg</span>
+                          mass<span className="uppercase">: {mass} kg</span>
                         </p>
                       </div>
                       <div className="flex flex-col text-right">
                         <p>
-                          year <span className="uppercase">: {birth_year}</span>
+                          year<span className="uppercase">: {birth_year}</span>
                         </p>
                         <p>
-                          height
-                          <span className="uppercase">: {height} cm</span>
+                          height<span className="uppercase">: {height} cm</span>
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row space-x-12">
                       <p>
-                        hair <span className="uppercase">: {hair_color}</span>
+                        hair<span className="uppercase">: {hair_color}</span>
                       </p>
                       <p>
-                        skin <span className="uppercase">: {skin_color}</span>
+                        skin<span className="uppercase">: {skin_color}</span>
                       </p>
                       <p>
-                        eye <span className="uppercase">: {eye_color}</span>
+                        eye<span className="uppercase">: {eye_color}</span>
                       </p>
                     </div>
                   </div>
