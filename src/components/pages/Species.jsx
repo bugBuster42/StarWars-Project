@@ -22,9 +22,11 @@ export default function Species() {
         const url = `https://swapi.dev/api/species/?page=${apiPage}`;
         setLoading(true);
         const data = await getInfo(url, controller);
-        setApiPageCount(Math.ceil(data.count / 5));
-        setSpecies(data.results.slice(startSlice, endSlice));
-        setLoading(false);
+        if (data) {
+          setApiPageCount(Math.ceil(data.count / 5));
+          setSpecies(data.results.slice(startSlice, endSlice));
+          setLoading(false);
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
       }

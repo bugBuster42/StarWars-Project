@@ -24,8 +24,10 @@ export default function CardDetailPlanet({ planet, img }) {
     const fetchResidentData = async () => {
       try {
         const responses = await Promise.all(promises);
-        const names = responses.map((res) => res.name);
-        setListResidents(names);
+        if (responses) {
+          const names = responses.map((res) => res);
+          setListResidents(names);
+        }
       } catch (err) {
         console.error(err);
       }
@@ -99,8 +101,8 @@ export default function CardDetailPlanet({ planet, img }) {
                 </h1>
                 <div className="flex justify-center">
                   <ul className="font-medium-5 columns-3 font-test text-xl leading-10 text-font-color">
-                    {listResidents.map((name, i) => (
-                      <li key={i}>{name}</li>
+                    {listResidents.map((a, i) => (
+                      <li key={i}>{a?.name}</li>
                     ))}
                   </ul>
                 </div>

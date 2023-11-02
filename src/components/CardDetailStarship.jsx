@@ -76,7 +76,7 @@ export default function CardDetailStarship({ starship, img, object }) {
                     <li className="uppercase">Pilots:</li>
                     {pilots.length === 0
                       ? 'no pilots'
-                      : pilots.map((a, i) => <li key={i}>{a.name}</li>)}
+                      : pilots.map((a, i) => <li key={i}>{a?.name}</li>)}
                   </ul>
                 </div>
               </div>

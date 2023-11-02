@@ -20,25 +20,26 @@ export default function CharacterScrollingCard() {
     const fetchCharacters = async (url) => {
       try {
         const data = await getInfo(url, controller);
+        if (data) {
+          const newCharactersData = data.results.map((character) => {
+            const id = parseInt(
+              character.url.split('people/')[1].replace('/', ''),
+            );
+            const imageUrl = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
 
-        const newCharactersData = data.results.map((character) => {
-          const id = parseInt(
-            character.url.split('people/')[1].replace('/', ''),
-          );
-          const imageUrl = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
+            if (id <= 10) setLoading(false);
+            return {
+              ...character,
+              image: imageUrl,
+            };
+          });
+          setCharactersData((prev) => [...prev, ...newCharactersData]);
 
-          if (id <= 10) setLoading(false);
-          return {
-            ...character,
-            image: imageUrl,
-          };
-        });
-        setCharactersData((prev) => [...prev, ...newCharactersData]);
+          loadedCount += newCharactersData.length;
 
-        loadedCount += newCharactersData.length;
-
-        if (data.next && loadedCount < 80) {
-          fetchCharacters(data.next);
+          if (data.next && loadedCount < 80) {
+            fetchCharacters(data.next);
+          }
         }
       } catch (error) {
         console.error('Error fetching data:', error);

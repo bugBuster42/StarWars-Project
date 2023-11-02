@@ -16,9 +16,11 @@ export default function Planets() {
     const url = `https://swapi.dev/api/planets/?page=${page}`;
     getInfo(url, controller)
       .then((data) => {
-        setPlanets(data.results);
-        setCountPages(data.count / 10);
-        setLoading(false);
+        if (data) {
+          setPlanets(data.results);
+          setCountPages(data.count / 10);
+          setLoading(false);
+        }
       })
       .catch((err) => {
         console.error('Error fetching data:', err);

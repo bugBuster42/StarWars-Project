@@ -23,8 +23,10 @@ export default function FilmsFooter() {
     const url = 'https://swapi.dev/api/films';
     getInfo(url, controller)
       .then((data) => {
-        setMovies(data.results);
-        setLoading(false);
+        if (data) {
+          setMovies(data.results);
+          setLoading(false);
+        }
       })
       .catch((error) => {
         console.error('Error fetching data:', error);

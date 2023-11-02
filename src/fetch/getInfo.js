@@ -9,22 +9,27 @@ const fetchPlus = (url, options = {}, retries) =>
       }
       throw new Error(res.status);
     })
-    .catch(() => {
-      if (retries > 0) {
-        return fetchPlus(url, options, retries - 1);
-      }
+    .catch((error) => {
+      return error;
     });
 
 const getInfo = async (param, controller) => {
-  const res = await fetchPlus(
-    param,
-    {
-      signal: controller.signal,
-      cache: 'force-cache',
-    },
-    3,
-  );
-  return res.json();
+  try {
+    const res = await fetchPlus(
+      param,
+      {
+        signal: controller.signal,
+        cache: 'force-cache',
+      },
+      3,
+    );
+    return res.json();
+  } catch (error) {
+    if (controller.signal.aborted) {
+      return;
+    }
+  }
+  throw new Error();
 };
 
 export default getInfo;

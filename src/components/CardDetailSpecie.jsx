@@ -1,7 +1,7 @@
 import useFetchByArray from '../hooks/useFetchByArray';
 import ImageWithFallback from './ImageWithFallback';
 import { useEffect, useState } from 'react';
-import getInfo from './fetch/getInfo';
+import getInfo from '../fetch/getInfo';
 
 export default function CardDetailSpecie({ specie, img }) {
   const {
@@ -20,12 +20,6 @@ export default function CardDetailSpecie({ specie, img }) {
 
   const fetchPeople = useFetchByArray(people);
 
-  const namesOfPeople = fetchPeople.map((a, i) => (
-    <li className="pl-1" key={i}>
-      {a.name}
-    </li>
-  ));
-
   useEffect(() => {
     const controller = new AbortController();
     const url = homeworld;
@@ -36,7 +30,9 @@ export default function CardDetailSpecie({ specie, img }) {
       } else {
         try {
           const data = await getInfo(url, controller);
-          setFetchHomeworld(data);
+          if (data) {
+            setFetchHomeworld(data);
+          }
         } catch (error) {
           console.error('Error fetching data:', error);
         }
@@ -69,32 +65,32 @@ export default function CardDetailSpecie({ specie, img }) {
                     <div className="flex flex-row space-x-8">
                       <div className="flex flex-col">
                         <p>
-                          Classification :{' '}
+                          Classification:{' '}
                           <span className="uppercase">{classification}</span>
                         </p>
                         <p>
-                          Designation :{' '}
+                          Designation:{' '}
                           <span className="uppercase">{designation}</span>
                         </p>
                         <p>
-                          Average Height :{' '}
+                          Average Height:{' '}
                           <span className="uppercase">{average_height}</span>
                         </p>
                       </div>
                       <div className="flex flex-col text-right">
                         <p>
-                          Average Lifespan :{' '}
+                          Average Lifespan:{' '}
                           <span className="uppercase">{average_lifespan}</span>
                         </p>
                         <p>
-                          Language :{' '}
+                          Language:{' '}
                           <span className="uppercase">{language}</span>
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row space-x-12">
                       <p>
-                        Skin : <span className="uppercase">{skin_colors}</span>
+                        Skin: <span className="uppercase">{skin_colors}</span>
                       </p>
                     </div>
                   </div>
@@ -103,7 +99,7 @@ export default function CardDetailSpecie({ specie, img }) {
               <div className="absolute right-0 top-0 z-10 h-full w-full bg-primary/20 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <div className="flex min-h-full flex-col items-center justify-center">
                   <p className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
-                    Homeworld :{' '}
+                    Homeworld:{' '}
                     {fetchHomeworld ? (
                       <span>{fetchHomeworld.name}</span>
                     ) : (
@@ -112,7 +108,14 @@ export default function CardDetailSpecie({ specie, img }) {
                   </p>
                   <div className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
                     <span className="flex">
-                      People : <ul>{namesOfPeople}</ul>
+                      People:{' '}
+                      <ul>
+                        {fetchPeople.map((a, i) => (
+                          <li className="pl-1" key={i}>
+                            {a?.name}
+                          </li>
+                        ))}
+                      </ul>
                     </span>
                   </div>
                 </div>

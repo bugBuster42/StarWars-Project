@@ -48,8 +48,8 @@ export default function TransportAnimation({
                 image={`https://starwars-visualguide.com/assets/img/${object}/${
                   transport.url.split('/')[5]
                 }.jpg`}
-                name={transport.name}
-                role={transport.model}
+                name={transport?.name}
+                role={transport?.model}
                 fallback={fallback}
                 size={48}
               />
