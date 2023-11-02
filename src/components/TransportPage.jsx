@@ -2,13 +2,11 @@ import { useEffect, useState } from 'react';
 import getInfo from './fetch/getInfo';
 import TransportContent from './TransportContent';
 import PaginationButton from './PaginationButton';
-import Loading from './Loading';
 
-export default function Transport({ object }) {
+export default function Transport({ loading, setLoading, object }) {
   const [transports, setTransports] = useState([]);
   const [activePage, setActivePage] = useState(1);
   const [pages, setPages] = useState(1);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setActivePage(1);
@@ -60,9 +58,7 @@ export default function Transport({ object }) {
           ))}
         </div>
       </div>
-      {loading ? (
-        <Loading />
-      ) : (
+      {loading ? null : (
         <TransportContent
           transports={transports[activePage - 1]}
           object={object}

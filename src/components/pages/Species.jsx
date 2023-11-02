@@ -37,7 +37,7 @@ export default function Species() {
 
   return (
     <>
-      <div className="absolute top-[18px] ml-72 flex justify-center">
+      <div className="absolute top-[9px] ml-72 flex justify-center">
         {loading ? <Loading /> : null}
       </div>
       <div>

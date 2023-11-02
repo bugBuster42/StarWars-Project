@@ -2,12 +2,17 @@ import { useState } from 'react';
 import Transport from '../TransportPage';
 import MovingStar from '../MovingStar';
 import Star from '../Star';
+import Loading from '../Loading';
 
 export default function Transports() {
   const [transport, setTransport] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   return (
     <>
+      <div className="absolute top-[9px] ml-72 flex justify-center">
+        {loading ? <Loading /> : null}
+      </div>
       <div className="px-32 pt-[80px]">
         <div className="relative z-20 ">
           <div className="flex gap-3">
@@ -34,9 +39,17 @@ export default function Transports() {
             </button>
           </div>
           {transport ? (
-            <Transport object="starships" />
+            <Transport
+              loading={loading}
+              setLoading={setLoading}
+              object="starships"
+            />
           ) : (
-            <Transport object="vehicles" />
+            <Transport
+              loading={loading}
+              setLoading={setLoading}
+              object="vehicles"
+            />
           )}
         </div>
       </div>
