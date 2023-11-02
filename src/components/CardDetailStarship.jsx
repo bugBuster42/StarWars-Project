@@ -17,8 +17,8 @@ export default function CardDetailStarship({ starship, img, object }) {
 
   return (
     <>
-      <div className="mt-[28rem] flex justify-center">
-        <div className="bg-[url('/card-support.png')] bg-no-repeat">
+      <div className="mt-[27rem] flex justify-center">
+        <div className="z-10 bg-[url('/card-support.png')] bg-no-repeat">
           <div className="group h-80 w-full">
             <div className="relative left-[64px] top-[33px] h-[236] w-[682px] origin-center transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               <div className="absolute z-10 h-full w-full bg-no-repeat">
@@ -32,7 +32,7 @@ export default function CardDetailStarship({ starship, img, object }) {
                     cardDetail={true}
                     starship={true}
                   />
-                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
+                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-9 text-font-color">
                     <p className="uppercase">{name}</p>
                     <div className="flex flex-row space-x-8">
                       <div className="flex flex-col">

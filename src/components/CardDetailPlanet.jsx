@@ -54,7 +54,7 @@ export default function CardDetailPlanet({ planet, img }) {
                     cardDetail={true}
                     planet={true}
                   />
-                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
+                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-9 text-font-color">
                     <p className="uppercase">{name}</p>
                     <div className="flex flex-row space-x-4">
                       <div className="flex flex-col">

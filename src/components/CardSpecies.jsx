@@ -2,22 +2,31 @@ import Smallcard from './SmallCard';
 import CardDetailSpecie from './CardDetailSpecie';
 import { useState } from 'react';
 
-export default function CardSpecies({ species = [] }) {
+export default function CardSpecies({ species = [], isHidden, setIsHidden }) {
   const [cardDetail, setCardDetail] = useState(0);
   const [imgCard, setImgCard] = useState('');
 
+  const handleScrollTo = () => {
+    window.scrollTo({
+      top: 200,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <>
-      <div className="mb-32 mt-10 flex flex-wrap justify-center gap-5 align-middle">
-        {species.map((specie, index) => (
+      <div className="mb-16 mt-10 flex flex-wrap justify-center gap-5">
+        {species.map((specie, selectedSpecie) => (
           <div
             className={
-              'card-species w-[286px] duration-300 scale-100 hover:ml-10 hover:mr-10 hover:scale-125 [&:has(+.card-species:hover)]:scale-110 [&:hover+.card-species]:scale-110'
+              'card-species w-[286px] cursor-pointer duration-300 scale-100 hover:ml-10 hover:mr-10 hover:scale-125 [&:has(+.card-species:hover)]:scale-110 [&:hover+.card-species]:scale-110'
             }
-            key={index}
+            key={selectedSpecie}
             onClick={() => {
-              setCardDetail(index);
+              setCardDetail(selectedSpecie);
               setImgCard(specie.url.split('/')[5]);
+              setIsHidden(false);
+              handleScrollTo();
             }}
           >
             <Smallcard
@@ -31,7 +40,9 @@ export default function CardSpecies({ species = [] }) {
           </div>
         ))}
       </div>
-      <CardDetailSpecie specie={species[cardDetail]} img={imgCard} />
+      <div className={isHidden ? 'hidden' : ''}>
+        <CardDetailSpecie specie={species[cardDetail]} img={imgCard} />
+      </div>
     </>
   );
 }

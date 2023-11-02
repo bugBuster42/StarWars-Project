@@ -11,8 +11,8 @@ export default function useFetchByArray(arrayUrl) {
       try {
         const responses = await Promise.all(promises);
         setData(responses);
-      } catch (err) {
-        console.error(err);
+      } catch (error) {
+        console.error('Error fetching data:', error);
       }
     };
     fetchData();

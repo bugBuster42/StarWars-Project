@@ -3,11 +3,10 @@ import { motion } from 'framer-motion';
 const colors = ['green', 'blue', 'red', 'yellow'];
 const randomIndex = Math.floor(Math.random() * colors.length);
 const randomColor = colors[randomIndex];
-
-export default function Loading(marginTop = 36) {
+export default function Loading() {
   return (
     <>
-      <div className={`justify-top mt-${marginTop} flex items-center gap-4`}>
+      <div className={`justify-top flex items-center gap-4`}>
         <img className="h-20 rotate-270" src="/laser-base-white.png"></img>
         <motion.div
           initial={{ width: '10px' }}
