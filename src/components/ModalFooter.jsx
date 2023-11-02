@@ -55,7 +55,7 @@ export default function ModalFooter({ film = [], close, image }) {
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Planets:</span>
+                  <span className="font-bold uppercase">Planets:</span>
                   <ul>
                     {planets.map((a, i) => (
                       <li key={i}>{a.name}</li>
@@ -63,7 +63,7 @@ export default function ModalFooter({ film = [], close, image }) {
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Starships:</span>
+                  <span className="font-bold uppercase">Starships:</span>
                   <ul>
                     {starships.map((a, i) => (
                       <li key={i}>{a.name}</li>
@@ -71,7 +71,7 @@ export default function ModalFooter({ film = [], close, image }) {
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Vehicles:</span>
+                  <span className="font-bold uppercase">Vehicles:</span>
                   <ul>
                     {vehicles.map((a, i) => (
                       <li key={i}>{a.name}</li>
@@ -79,7 +79,7 @@ export default function ModalFooter({ film = [], close, image }) {
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Species:</span>
+                  <span className="font-bold uppercase">Species:</span>
                   <ul>
                     {species.map((a, i) => (
                       <li key={i}>{a.name}</li>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import getInfo from '../fetch/getInfo';
+import getInfo from '../../fetch/getInfo';
 import Loading from '../Loading';
 import PaginationButton from '../PaginationButton';
 import CardSpecies from '../CardSpecies';

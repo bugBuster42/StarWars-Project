@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getInfo from './fetch/getInfo';
+import getInfo from '../fetch/getInfo';
 import SmallCard from './SmallCard';
 import Loading from './Loading';
 import CardDetailCharacter from './CardDetailCharacter';

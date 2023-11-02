@@ -21,7 +21,7 @@ export default function CardDetailSpecie({ specie, img }) {
                 <img src="/card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 [backface-visibility:hidden] group-hover:[transform:rotateY(180deg)]">
                   <ImageWithFallback
-                    fallback={'/Chewbacca.jpeg'}
+                    fallback={'/chewbacca.jpeg'}
                     src={`https://starwars-visualguide.com/assets/img/species/${img}.jpg`}
                     name={'species'}
                     size={52}

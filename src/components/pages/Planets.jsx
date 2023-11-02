@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import CarouselPlanets from '../CarouselPlanets';
-import getInfo from '../fetch/getInfo';
+import getInfo from '../../fetch/getInfo';
 import PaginationButton from '../PaginationButton';
 import Loading from '../Loading';
 import Star from '../Star';

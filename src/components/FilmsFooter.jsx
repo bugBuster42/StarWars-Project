@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import ModalFooter from './ModalFooter';
-import getInfo from './fetch/getInfo';
+import getInfo from '../fetch/getInfo';
 
 const films = [
-  '/movie1.webp',
-  '/movie2.webp',
-  '/movie3.webp',
-  '/movie4.webp',
-  '/movie5.webp',
-  '/movie6.webp',
+  '/movie-1.webp',
+  '/movie-2.webp',
+  '/movie-3.webp',
+  '/movie-4.webp',
+  '/movie-5.webp',
+  '/movie-6.webp',
 ];
 
 export default function FilmsFooter() {

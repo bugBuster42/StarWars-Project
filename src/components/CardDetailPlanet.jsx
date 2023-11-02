@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import getInfo from './fetch/getInfo';
+import getInfo from '../fetch/getInfo';
 import ImageWithFallback from './ImageWithFallback';
 
 export default function CardDetailPlanet({ planet, img }) {

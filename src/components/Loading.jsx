@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
-export default function Loading(marginTop = 36) {
-  const colors = ['green', 'blue', 'red', 'yellow'];
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  const randomColor = colors[randomIndex];
+const colors = ['green', 'blue', 'red', 'yellow'];
+const randomIndex = Math.floor(Math.random() * colors.length);
+const randomColor = colors[randomIndex];
 
+export default function Loading(marginTop = 36) {
   return (
     <>
       <div className={`justify-top mt-${marginTop} flex items-center gap-4`}>

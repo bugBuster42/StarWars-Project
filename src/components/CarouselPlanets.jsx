@@ -15,7 +15,7 @@ export default function CarouselPlanets({ planets }) {
     <>
       <div className="flex justify-center">
         <div>
-          <div className="perspective relative mt-28 w-48">
+          <div className="relative mt-28 w-48 perspective-1000">
             <div
               className={`transform-style rotate-y-[${currDeg}deg] absolute h-full w-full duration-[1000ms]`}
             >
