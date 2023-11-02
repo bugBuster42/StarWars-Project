@@ -36,7 +36,7 @@ export default function CharacterScrollingCard() {
           fetchCharacters(data.next);
         }
       } catch (error) {
-        console.error('Erreur lors de la récupération des données:', error);
+        console.error('Error fetching data:', error);
       }
     };
 
