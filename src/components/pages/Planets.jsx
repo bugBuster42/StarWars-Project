@@ -34,6 +34,8 @@ export default function Planets() {
     <>
       <div className="absolute top-[9px] ml-72 flex justify-center">
         {loading ? <Loading /> : null}
+      </div>
+      <div>
         <div className="flex justify-center">
           <div className="absolute z-20 ">
             <div className="flex gap-2">
