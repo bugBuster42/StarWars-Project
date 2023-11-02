@@ -47,7 +47,7 @@ export default function Transport({ object }) {
 
   return (
     <>
-      <div className="flex justify-end pb-5">
+      <div className="flex justify-center">
         <div className="flex gap-2">
           {new Array(pages).fill().map((a, index) => (
             <PaginationButton

@@ -74,7 +74,7 @@ export default function CharacterScrollingCard() {
             return (
               <div
                 key={index}
-                className="transition-transform duration-500 ease-in-out transform hover:-translate-y-10 hover:scale-110 "
+                className="cursor-pointer transition-transform duration-500 ease-in-out transform hover:-translate-y-10 hover:scale-110 "
                 onClick={() => handleCharacterSelect(character)}
               >
                 <SmallCard

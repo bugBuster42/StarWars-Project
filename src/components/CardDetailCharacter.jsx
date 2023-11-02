@@ -58,7 +58,7 @@ export default function CardDetailCharacter({ character }) {
                     alt={name}
                     className="z-10 h-52 w-40 object-cover"
                   />
-                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
+                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-9 text-font-color">
                     <p className="text-3xl font-bold uppercase">{name}</p>
                     <div className="flex flex-row space-x-8">
                       <div className="flex flex-col">

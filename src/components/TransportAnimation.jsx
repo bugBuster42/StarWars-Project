@@ -25,6 +25,7 @@ export default function TransportAnimation({
               setCardDetail(index);
               setImgCard(transport.url.split('/')[5]);
             }}
+            className="cursor-pointer"
           >
             <motion.div
               key={index}
@@ -32,7 +33,7 @@ export default function TransportAnimation({
                 x: initialX,
                 position: 'absolute',
                 zIndex: 10 - index,
-                top: '330px',
+                top: '90px',
               }}
               animate={[{ x: [initialX, leftX, rightX, initialX] }]}
               transition={{

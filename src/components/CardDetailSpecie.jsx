@@ -110,11 +110,11 @@ export default function CardDetailSpecie({ specie, img }) {
                       'null'
                     )}
                   </p>
-                  <p className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
+                  <div className="font-medium-5 my-4 text-center font-test text-xl text-font-color">
                     <span className="flex">
                       People : <ul>{namesOfPeople}</ul>
                     </span>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>

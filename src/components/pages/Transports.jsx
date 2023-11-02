@@ -8,35 +8,37 @@ export default function Transports() {
 
   return (
     <>
-      <div className="px-32 pt-36">
-        <div className="flex gap-3">
-          <button
-            className={`uppercase text-font-color hover:underline ${
-              transport ? 'text-text-yellow' : ''
-            }`}
-            onClick={() => {
-              setTransport(true);
-            }}
-          >
-            Ships
-          </button>
-          <p className="uppercase text-font-color">/</p>
-          <button
-            className={`uppercase text-font-color hover:underline ${
-              transport ? '' : 'text-text-yellow'
-            }`}
-            onClick={() => {
-              setTransport(false);
-            }}
-          >
-            Vehicles
-          </button>
+      <div className="px-32 pt-[80px]">
+        <div className="relative z-20 ">
+          <div className="flex gap-3">
+            <button
+              className={`uppercase text-font-color hover:underline ${
+                transport ? 'text-text-yellow' : ''
+              }`}
+              onClick={() => {
+                setTransport(true);
+              }}
+            >
+              Ships
+            </button>
+            <p className="uppercase text-font-color">/</p>
+            <button
+              className={`uppercase text-font-color hover:underline ${
+                transport ? '' : 'text-text-yellow'
+              }`}
+              onClick={() => {
+                setTransport(false);
+              }}
+            >
+              Vehicles
+            </button>
+          </div>
+          {transport ? (
+            <Transport object="starships" />
+          ) : (
+            <Transport object="vehicles" />
+          )}
         </div>
-        {transport ? (
-          <Transport object="starships" />
-        ) : (
-          <Transport object="vehicles" />
-        )}
       </div>
       <MovingStar top="50px" width="20" />
       <MovingStar top="500px" delay="6" />
