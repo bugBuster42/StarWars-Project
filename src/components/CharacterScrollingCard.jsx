@@ -39,6 +39,12 @@ export default function CharacterScrollingCard() {
 
         if (data.next && loadedCount < 80) {
           fetchCharacters(data.next);
+        } else {
+          const randomCharacter =
+            newCharactersData[
+              Math.floor(Math.random() * newCharactersData.length)
+            ];
+          setSelectedCharacter(randomCharacter);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
