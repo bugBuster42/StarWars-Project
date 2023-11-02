@@ -2,14 +2,13 @@ export default function CardDetailCharacter({ character }) {
   const {
     name,
     gender,
-    species,
-    homeworld,
-    year,
+    birth_year,
     mass,
     height,
-    hair,
-    skin,
-    eye,
+    hair_color,
+    skin_color,
+    eye_color,
+    image,
   } = character;
   return (
     <>
@@ -21,11 +20,11 @@ export default function CardDetailCharacter({ character }) {
                 <img src="/card-front.png" alt="" className="absolute z-0" />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 transition-all group-hover:[transform:rotateY(180deg)]">
                   <img
-                    src="/Chewbacca.jpeg"
-                    alt="character"
+                    src={image}
+                    alt={name}
                     className="z-10 h-52 w-40 object-cover"
                   />
-                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-10 text-font-color">
+                  <div className="z-10 flex flex-col items-center font-test text-xl font-medium leading-9 text-font-color">
                     <p className="uppercase">{name}</p>
                     <div className="flex flex-row space-x-8">
                       <div className="flex flex-col">
@@ -33,19 +32,12 @@ export default function CardDetailCharacter({ character }) {
                           gender <span className="uppercase">{gender}</span>
                         </p>
                         <p>
-                          homeworld{' '}
-                          <span className="uppercase">{homeworld}</span>
-                        </p>
-                        <p>
                           mass <span className="uppercase">{mass}</span>
                         </p>
                       </div>
                       <div className="flex flex-col text-right">
                         <p>
-                          species <span className="uppercase">{species}</span>
-                        </p>
-                        <p>
-                          year <span className="uppercase">{year}</span>
+                          year <span className="uppercase">{birth_year}</span>
                         </p>
                         <p>
                           height <span className="uppercase">{height}</span>
@@ -54,13 +46,13 @@ export default function CardDetailCharacter({ character }) {
                     </div>
                     <div className="flex flex-row space-x-12">
                       <p>
-                        hair <span className="uppercase">{hair}</span>
+                        hair <span className="uppercase">{hair_color}</span>
                       </p>
                       <p>
-                        skin <span className="uppercase">{skin}</span>
+                        skin <span className="uppercase">{skin_color}</span>
                       </p>
                       <p>
-                        eye <span className="uppercase">{eye}</span>
+                        eye <span className="uppercase">{eye_color}</span>
                       </p>
                     </div>
                   </div>

@@ -14,9 +14,9 @@ export default function CarouselPlanets({ planets }) {
   return (
     <>
       <div className="flex justify-center">
-        <div className="perspective relative mt-28 w-48">
+        <div className="perspective relative z-20 mt-28 w-48">
           <div
-            className={`transform-style rotate-y-[${currDeg}deg] -webkit-transform: rotate-y-[${currDeg}deg] absolute h-full w-full duration-[1000ms]`}
+            className={`transform-style rotate-y-[${currDeg}deg] absolute h-full w-full duration-[1000ms]`}
           >
             {planets.map((p, i) => (
               <img
@@ -37,7 +37,7 @@ export default function CarouselPlanets({ planets }) {
                   current === i ? 'shadow-xl shadow-yellow-200/30' : ''
                 } absolute block h-48 w-48 rounded-full bg-slate-600 object-cover [transform:rotateY(${
                   i * 36
-                }deg)translateZ(400px)]`}
+                }deg)translateZ(400px)] cursor-pointer`}
               />
             ))}
           </div>

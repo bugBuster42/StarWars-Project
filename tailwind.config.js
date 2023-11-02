@@ -38,6 +38,7 @@ export default {
     'right-56',
     'right-8',
     'right-[42rem]',
+    'right-[38rem]',
     'border-fluo-green',
     'bg-light-green',
     'shadow-green',
@@ -90,7 +91,7 @@ export default {
           },
         },
         'move-cards': {
-          '0%': { transform: 'translateY(1vh)' },
+          '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-15vh)' },
         },
       },

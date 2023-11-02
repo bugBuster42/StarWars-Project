@@ -1,6 +1,6 @@
 export default function HomeScrollingText() {
   return (
-    <div className="perspective relative mx-auto h-[350px] w-[1550px] overflow-hidden before:absolute before:left-0 before:right-0 before:top-0 before:z-10 before:h-[350px] before:bg-gradient-to-b before:from-black before:to-transparent after:absolute after:bottom-0 after:left-0 after:right-0 after:z-10 after:h-[10px] after:bg-gradient-to-t after:from-black after:to-transparent">
+    <div className="star-wars-opening-crawl-effect relative mx-auto h-[350px] w-[1550px] overflow-hidden">
       <div className="absolute bottom-0 left-0 right-0 top-0 animate-scroll-text">
         <div className="mx-auto w-3/5 text-justify text-4xl font-bold leading-loose text-text-yellow">
           <h1 className="text-center">WELCOME TO THE STAR WARS ENCYCLOPEDIA</h1>
