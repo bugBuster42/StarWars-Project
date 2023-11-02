@@ -38,7 +38,7 @@ export default function CarouselPlanets({ planets }) {
                     current === i ? 'shadow-xl shadow-yellow-200/30' : ''
                   } absolute block h-48 w-48 rounded-full bg-slate-600 object-cover [transform:rotateY(${
                     i * 36
-                  }deg)translateZ(400px)]`}
+                  }deg)translateZ(400px)] cursor-pointer`}
                 />
               ))}
             </div>
