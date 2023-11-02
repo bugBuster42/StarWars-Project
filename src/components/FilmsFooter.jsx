@@ -47,7 +47,7 @@ export default function FilmsFooter() {
 
   return (
     <>
-      <div className="flex h-[6rem] gap-2">
+      <div className="flex h-[5rem] gap-2">
         {loading
           ? null
           : movies.map((film, i) => (

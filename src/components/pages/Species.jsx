@@ -37,8 +37,8 @@ export default function Species() {
 
   return (
     <>
-      <div className="absolute top-0 ml-72 flex justify-center">
-        {loading ? <Loading mt={2} /> : null}
+      <div className="absolute top-[18px] ml-72 flex justify-center">
+        {loading ? <Loading /> : null}
       </div>
       <div>
         <img
@@ -58,9 +58,9 @@ export default function Species() {
           src="/blue-star.png"
         />
       </div>
-      <div className="pt-36">
+      <div className="pt-1">
         <div className="relative z-20 flex justify-center pb-5">
-          <div className="flex gap-2 translate-x-[650px]">
+          <div className="flex gap-2">
             {new Array(apiPageCount).fill().map((a, index) => (
               <PaginationButton
                 key={index}

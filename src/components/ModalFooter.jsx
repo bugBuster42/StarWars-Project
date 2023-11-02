@@ -10,10 +10,10 @@ export default function ModalFooter({ film = [], close, image }) {
   return (
     <>
       <div
-        className="absolute z-[80] h-screen w-screen -translate-x-[0rem] -translate-y-[48.5rem]"
+        className="absolute z-[80] h-screen w-screen -translate-x-[0rem] -translate-y-[100%]"
         onClick={close}
       ></div>
-      <div className="absolute left-1/2 z-[100] h-[650px] w-auto backdrop-blur-3xl -translate-x-1/2 -translate-y-[43em]">
+      <div className="absolute left-1/2 z-[100] h-[650px] w-auto backdrop-blur-3xl -translate-x-1/2 -translate-y-[110%]">
         <div className="h-[650px] rounded-lg border-2 border-primary text-font-color shadow dark:bg-gray-700">
           <div className="flex items-start justify-between rounded-t border-b p-4">
             <h3 className="text-xl font-semibold uppercase">{film.title}</h3>
