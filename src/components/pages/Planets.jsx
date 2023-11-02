@@ -29,9 +29,11 @@ export default function Planets() {
       controller.abort();
     };
   }, [page]);
+
   return (
     <>
-      <div>
+      <div className="absolute top-[9px] ml-72 flex justify-center">
+        {loading ? <Loading /> : null}
         <div className="flex justify-center">
           <div className="absolute z-20 ">
             <div className="flex gap-2">
@@ -48,9 +50,7 @@ export default function Planets() {
             </div>
           </div>
         </div>
-        {loading ? (
-          <Loading />
-        ) : (
+        {loading ? null : (
           <CarouselPlanets
             planets={planets}
             isHidden={isHidden}
