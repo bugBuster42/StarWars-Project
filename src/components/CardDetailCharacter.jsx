@@ -26,19 +26,28 @@ export default function CardDetailCharacter({ character }) {
     const [data, setData] = useState(null);
 
     useEffect(() => {
+      const controller = new AbortController();
+
       if (urls) {
         if (Array.isArray(urls)) {
           Promise.all(
-            urls.map((url) => fetch(url).then((res) => res.json())),
+            urls.map((url) =>
+              fetch(url, { signal: controller.signal }).then((res) =>
+                res.json(),
+              ),
+            ),
           ).then((results) => {
             setData(results);
           });
         } else {
-          fetch(urls)
+          fetch(urls, { signal: controller.signal })
             .then((response) => response.json())
             .then((data) => setData(data));
         }
       }
+      return () => {
+        controller.abort();
+      };
     }, [urls]);
 
     return data;
