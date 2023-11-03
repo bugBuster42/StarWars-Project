@@ -19,7 +19,7 @@ export default function CardSpecies({ species = [], isHidden, setIsHidden }) {
         {species.map((specie, selectedSpecie) => (
           <div
             className={
-              'card-species w-[286px] cursor-pointer duration-300 scale-100 hover:ml-10 hover:mr-10 hover:scale-125 [&:has(+.card-species:hover)]:scale-110 [&:hover+.card-species]:scale-110'
+              'card-species z-20 w-[286px] cursor-pointer duration-300 scale-100 hover:ml-10 hover:mr-10 hover:scale-125 [&:has(+.card-species:hover)]:scale-110 [&:hover+.card-species]:scale-110'
             }
             key={selectedSpecie}
             onClick={() => {
