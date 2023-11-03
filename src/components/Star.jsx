@@ -16,7 +16,7 @@ export default function Star({
       >
         <img
           className={`w-${width} animate-pulse`}
-          src={`${import.meta.env.BASE_URL}/my-star.png`}
+          src={`${import.meta.env.BASE_URL}my-star.png`}
           alt=""
         />
       </div>

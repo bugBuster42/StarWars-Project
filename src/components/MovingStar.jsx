@@ -30,7 +30,7 @@ export default function MovingStar({
       >
         <img
           className={`w-${width} animate-pulse`}
-          src={`${import.meta.env.BASE_URL}/my-star.png`}
+          src={`${import.meta.env.BASE_URL}my-star.png`}
           alt=""
         />
       </motion.div>

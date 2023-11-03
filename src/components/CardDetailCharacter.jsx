@@ -18,7 +18,7 @@ export default function CardDetailCharacter({ character }) {
             <div className="relative left-[64px] top-[33px] h-[236] w-[682px] origin-center transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               <div className="absolute z-10 h-full w-full bg-no-repeat">
                 <img
-                  src={`${import.meta.env.BASE_URL}/card-front.png`}
+                  src={`${import.meta.env.BASE_URL}card-front.png`}
                   alt=""
                   className="absolute z-0"
                 />

@@ -9,7 +9,7 @@ export default function Loading() {
       <div className={`justify-top flex items-center gap-4`}>
         <img
           className="h-20 rotate-270"
-          src={`${import.meta.env.BASE_URL}/laser-base-white.png`}
+          src={`${import.meta.env.BASE_URL}laser-base-white.png`}
         ></img>
         <motion.div
           initial={{ width: '10px' }}

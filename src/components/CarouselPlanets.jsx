@@ -26,7 +26,7 @@ export default function CarouselPlanets({ planets }) {
                 onError={(e) => {
                   e.target.src = `${
                     import.meta.env.BASE_URL
-                  }/placeholder-planet.png`;
+                  }placeholder-planet.png`;
                 }}
                 alt={p.name}
                 key={i}

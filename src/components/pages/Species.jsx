@@ -45,19 +45,19 @@ export default function Species() {
       <div>
         <img
           className={`fixed right-0 mr-24 w-11 animate-pulse`}
-          src={`${import.meta.env.BASE_URL}/blue-star.png`}
+          src={`${import.meta.env.BASE_URL}blue-star.png`}
         />
         <img
           className={`fixed left-0 ml-20 mt-8 w-10 animate-pulse`}
-          src={`${import.meta.env.BASE_URL}/blue-star.png`}
+          src={`${import.meta.env.BASE_URL}blue-star.png`}
         />
         <img
           className={`fixed right-0 top-0 mr-[960px] mt-12 w-7 animate-pulse`}
-          src={`${import.meta.env.BASE_URL}/blue-star.png`}
+          src={`${import.meta.env.BASE_URL}blue-star.png`}
         />
         <img
           className={`fixed bottom-0 left-0 mb-20 ml-96 w-9 animate-pulse`}
-          src={`${import.meta.env.BASE_URL}/blue-star.png`}
+          src={`${import.meta.env.BASE_URL}blue-star.png`}
         />
       </div>
       <div className="pt-1">
