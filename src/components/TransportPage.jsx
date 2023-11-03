@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import getInfo from './fetch/getInfo';
+import getInfo from '../fetch/getInfo';
 import TransportContent from './TransportContent';
 import PaginationButton from './PaginationButton';
 
@@ -20,19 +20,21 @@ export default function Transport({ loading, setLoading, object }) {
     setLoading(true);
     getInfo(url, controller)
       .then((data) => {
-        if (activePage % 2 !== 0) {
-          setTransports((prev) => {
-            prev[activePage - 1] = data.results.slice(0, 5);
-            return prev;
-          });
-        } else {
-          setTransports((prev) => {
-            prev[activePage - 1] = data.results.slice(5, 10);
-            return prev;
-          });
+        if (data) {
+          if (activePage % 2 !== 0) {
+            setTransports((prev) => {
+              prev[activePage - 1] = data.results.slice(0, 5);
+              return prev;
+            });
+          } else {
+            setTransports((prev) => {
+              prev[activePage - 1] = data.results.slice(5, 10);
+              return prev;
+            });
+          }
+          setLoading(false);
+          setPages(Math.ceil(data.count / 10) * 2);
         }
-        setLoading(false);
-        setPages(Math.ceil(data.count / 10) * 2);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);

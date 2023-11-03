@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 
+const colors = ['green', 'blue', 'red', 'yellow'];
+const randomIndex = Math.floor(Math.random() * colors.length);
+const randomColor = colors[randomIndex];
 export default function Loading() {
-  const colors = ['green', 'blue', 'red', 'yellow'];
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  const randomColor = colors[randomIndex];
-
   return (
     <>
       <div className={`justify-top flex items-center gap-4`}>

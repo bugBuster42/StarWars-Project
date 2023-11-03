@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import getInfo from '../components/fetch/getInfo';
+import getInfo from '../fetch/getInfo';
 
 export default function useFetchByArray(arrayUrl) {
   const [data, setData] = useState([]);

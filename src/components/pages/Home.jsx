@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import getInfo from '../fetch/getInfo';
+import getInfo from '../../fetch/getInfo';
 import Loading from '../Loading';
 import HomeScrollingText from '../HomeScrollingText';
 import Smallcard from '../SmallCard';
@@ -50,7 +50,7 @@ const fetchWithImageRetry = async (category, maxRetries, controller) => {
     const imageExists = await checkImage(imageUrl);
 
     if (imageExists) {
-      return await getInfo(url, controller);
+      return getInfo(url, controller);
     }
 
     retries += 1;
@@ -75,7 +75,7 @@ export default function Home() {
     )
       .then((results) => {
         const randomData = {};
-        Object.keys(categories).forEach((category, index) => {
+        Object.keys(categories).map((category, index) => {
           randomData[category] = results[index];
         });
         setData(randomData);

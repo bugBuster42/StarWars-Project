@@ -16,15 +16,22 @@ const fetchPlus = (url, options = {}, retries) =>
     });
 
 const getInfo = async (param, controller) => {
-  const res = await fetchPlus(
-    param,
-    {
-      signal: controller.signal,
-      cache: 'force-cache',
-    },
-    3,
-  );
-  return res.json();
+  try {
+    const res = await fetchPlus(
+      param,
+      {
+        signal: controller.signal,
+        cache: 'force-cache',
+      },
+      3,
+    );
+    return res.json();
+  } catch (error) {
+    if (controller.signal.aborted) {
+      return;
+    }
+  }
+  throw new Error();
 };
 
 export default getInfo;

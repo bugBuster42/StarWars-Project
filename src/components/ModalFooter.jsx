@@ -28,7 +28,7 @@ export default function ModalFooter({ film = [], close, image }) {
           <div className="grid grid-cols-2 gap-5 p-10 ">
             <img
               src={image}
-              alt={`image de ${image}`}
+              alt={image}
               className="relative w-80 object-cover shadow shadow-stone-500"
             />
             <div className="flex h-[500px] flex-col gap-5 overflow-y-scroll">
@@ -50,39 +50,39 @@ export default function ModalFooter({ film = [], close, image }) {
                   <span className="font-bold uppercase">Characters:</span>
                   <ul>
                     {characters.map((a, i) => (
-                      <li key={i}>{a.name}</li>
+                      <li key={i}>{a?.name}</li>
                     ))}
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Planets:</span>
+                  <span className="font-bold uppercase">Planets:</span>
                   <ul>
                     {planets.map((a, i) => (
-                      <li key={i}>{a.name}</li>
+                      <li key={i}>{a?.name}</li>
                     ))}
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Starships:</span>
+                  <span className="font-bold uppercase">Starships:</span>
                   <ul>
                     {starships.map((a, i) => (
-                      <li key={i}>{a.name}</li>
+                      <li key={i}>{a?.name}</li>
                     ))}
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Vehicles:</span>
+                  <span className="font-bold uppercase">Vehicles:</span>
                   <ul>
                     {vehicles.map((a, i) => (
-                      <li key={i}>{a.name}</li>
+                      <li key={i}>{a?.name}</li>
                     ))}
                   </ul>
                 </li>
                 <li>
-                  <span className="font-bold uppercase"> Species:</span>
+                  <span className="font-bold uppercase">Species:</span>
                   <ul>
                     {species.map((a, i) => (
-                      <li key={i}>{a.name}</li>
+                      <li key={i}>{a?.name}</li>
                     ))}
                   </ul>
                 </li>

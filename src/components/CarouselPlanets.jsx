@@ -14,7 +14,7 @@ export default function CarouselPlanets({ planets, isHidden, setIsHidden }) {
   return (
     <>
       <div className="flex justify-center">
-        <div className="perspective relative z-20 mt-28 w-48">
+        <div className="relative z-20 mt-28 w-48 perspective-1000">
           <div
             className={`transform-style rotate-y-[${currDeg}deg] absolute h-full w-full duration-[1000ms]`}
           >

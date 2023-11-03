@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import CarouselPlanets from '../CarouselPlanets';
-import getInfo from '../fetch/getInfo';
+import getInfo from '../../fetch/getInfo';
 import PaginationButton from '../PaginationButton';
 import Loading from '../Loading';
 import Star from '../Star';
@@ -18,9 +18,11 @@ export default function Planets() {
     setLoading(true);
     getInfo(url, controller)
       .then((data) => {
-        setPlanets(data.results);
-        setCountPages(data.count / 10);
-        setLoading(false);
+        if (data) {
+          setPlanets(data.results);
+          setCountPages(data.count / 10);
+          setLoading(false);
+        }
       })
       .catch((err) => {
         console.error('Error fetching data:', err);
