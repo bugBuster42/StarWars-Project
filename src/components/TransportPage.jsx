@@ -64,7 +64,7 @@ export default function Transport({ loading, setLoading, object }) {
         <TransportContent
           transports={transports[activePage - 1]}
           object={object}
-          fallback="/transport-placeholder.png"
+          fallback={`${import.meta.env.BASE_URL}transport-placeholder.png`}
         />
       )}
     </>

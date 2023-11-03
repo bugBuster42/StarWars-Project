@@ -22,10 +22,16 @@ export default function CardDetailStarship({ starship, img, object }) {
           <div className="group h-80 w-full">
             <div className="relative left-[64px] top-[33px] h-[236] w-[682px] origin-center transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               <div className="absolute z-10 h-full w-full bg-no-repeat">
-                <img src="/card-front.png" alt="" className="absolute z-0" />
+                <img
+                  src={`${import.meta.env.BASE_URL}card-front.png`}
+                  alt=""
+                  className="absolute z-0"
+                />
                 <div className="z-20 mt-3 flex items-center justify-center space-x-8 [backface-visibility:hidden] group-hover:[transform:rotateY(180deg)]">
                   <ImageWithFallback
-                    fallback={'/transport-placeholder.png'}
+                    fallback={`${
+                      import.meta.env.BASE_URL
+                    }transport-placeholder.png`}
                     src={`https://starwars-visualguide.com/assets/img/${object}/${img}.jpg`}
                     name={'starship'}
                     size={52}
