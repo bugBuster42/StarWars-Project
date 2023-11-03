@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CardDetailPlanet from './CardDetailPlanet';
 
-export default function CarouselPlanets({ planets }) {
+export default function CarouselPlanets({ planets, isHidden, setIsHidden }) {
   const [currDeg, setCurrDeg] = useState(0);
   const [current, setCurrent] = useState(0);
   const [cardDetail, setCardDetail] = useState(0);
@@ -34,6 +34,7 @@ export default function CarouselPlanets({ planets }) {
                   slide(i);
                   setCardDetail(i);
                   setImgCard(p.url.split('/')[5]);
+                  setIsHidden(false);
                 }}
                 className={`${
                   current === i ? 'shadow-xl shadow-yellow-200/30' : ''
@@ -45,7 +46,9 @@ export default function CarouselPlanets({ planets }) {
           </div>
         </div>
       </div>
-      <CardDetailPlanet planet={planets[cardDetail]} img={imgCard} />
+      <div className={isHidden ? 'hidden' : ''}>
+        <CardDetailPlanet planet={planets[cardDetail]} img={imgCard} />
+      </div>
     </>
   );
 }

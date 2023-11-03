@@ -94,7 +94,7 @@ export default function Home() {
     <>
       <div className="relative">
         {loading ? (
-          <div className="absolute -top-[18px] ml-72 flex justify-center">
+          <div className="absolute -top-[23px] ml-72 flex justify-center">
             <Loading />
           </div>
         ) : null}
