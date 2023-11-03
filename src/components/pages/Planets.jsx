@@ -10,10 +10,12 @@ export default function Planets() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [countPages, setCountPages] = useState(0);
+  const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
     const url = `https://swapi.dev/api/planets/?page=${page}`;
+    setLoading(true);
     getInfo(url, controller)
       .then((data) => {
         if (data) {
@@ -29,8 +31,12 @@ export default function Planets() {
       controller.abort();
     };
   }, [page]);
+
   return (
     <>
+      <div className="absolute top-[9px] ml-72 flex justify-center">
+        {loading ? <Loading /> : null}
+      </div>
       <div>
         <div className="flex justify-center">
           <div className="absolute z-20 ">
@@ -40,6 +46,7 @@ export default function Planets() {
                   key={i}
                   onClick={() => {
                     setPage(i + 1);
+                    setIsHidden(true);
                   }}
                   isActive={page === i + 1}
                 />
@@ -47,7 +54,13 @@ export default function Planets() {
             </div>
           </div>
         </div>
-        {loading ? <Loading /> : <CarouselPlanets planets={planets} />}
+        {loading ? null : (
+          <CarouselPlanets
+            planets={planets}
+            isHidden={isHidden}
+            setIsHidden={setIsHidden}
+          />
+        )}
       </div>
       <Star width="32" bottom="20" left="96" />
       <Star width="12" top="44" left="44" />
