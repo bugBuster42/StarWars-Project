@@ -27,7 +27,7 @@ export default function ModalFooter({ film = [], close, image }) {
           </div>
           <div className="grid grid-cols-2 gap-5 p-10 ">
             <img
-              src={image}
+              src={`${import.meta.env.BASE_URL}${image}`}
               alt={image}
               className="relative w-80 object-cover shadow shadow-stone-500"
             />

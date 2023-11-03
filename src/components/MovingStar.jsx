@@ -28,7 +28,11 @@ export default function MovingStar({
           delay,
         }}
       >
-        <img className={`w-${width} animate-pulse`} src="/my-star.png" alt="" />
+        <img
+          className={`w-${width} animate-pulse`}
+          src={`${import.meta.env.BASE_URL}/my-star.png`}
+          alt=""
+        />
       </motion.div>
     </>
   );

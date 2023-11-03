@@ -55,7 +55,7 @@ export default function FilmsFooter() {
           : movies.map((film, i) => (
               <img
                 key={i}
-                src={films[i]}
+                src={`${import.meta.env.BASE_URL}${films[i]}`}
                 alt={`image de ${film}`}
                 onClick={() => toggleModal(i)}
                 className="relative cursor-pointer object-cover duration-500 hover:bottom-[20px] hover:mx-10 hover:shadow hover:shadow-stone-500 hover:scale-[2]"

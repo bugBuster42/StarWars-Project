@@ -76,7 +76,9 @@ export default function CharacterScrollingCard() {
                   image={character.image}
                   name={character.name}
                   role={`Size : ${character.height} cm`}
-                  fallback="/transport-placeholder.png"
+                  fallback={`${
+                    import.meta.env.BASE_URL
+                  }/transport-placeholder.png`}
                 />
               </div>
             );

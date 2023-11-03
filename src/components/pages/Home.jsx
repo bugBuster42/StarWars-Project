@@ -119,7 +119,9 @@ export default function Home() {
                   <Smallcard
                     name={name}
                     image={imageUrl}
-                    fallback="/transport-placeholder.png"
+                    fallback={`${
+                      import.meta.env.BASE_URL
+                    }/transport-placeholder.png`}
                   />
                 </Link>
                 <div className="absolute bottom-4 left-4 font-main text-3xl  font-semibold uppercase text-primary-dark">

@@ -14,7 +14,11 @@ export default function Star({
           right !== '' ? `right-${right}` : ''
         }`.trim()}
       >
-        <img className={`w-${width} animate-pulse`} src="/my-star.png" alt="" />
+        <img
+          className={`w-${width} animate-pulse`}
+          src={`${import.meta.env.BASE_URL}/my-star.png`}
+          alt=""
+        />
       </div>
     </>
   );
