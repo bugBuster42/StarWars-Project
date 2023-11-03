@@ -9,8 +9,10 @@ const fetchPlus = (url, options = {}, retries) =>
       }
       throw new Error(res.status);
     })
-    .catch((error) => {
-      return error;
+    .catch(() => {
+      if (retries > 0) {
+        return fetchPlus(url, options, retries - 1);
+      }
     });
 
 const getInfo = async (param, controller) => {

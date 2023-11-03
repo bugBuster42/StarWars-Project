@@ -39,6 +39,12 @@ export default function CharacterScrollingCard() {
 
           if (data.next && loadedCount < 80) {
             fetchCharacters(data.next);
+          } else {
+            const randomCharacter =
+              newCharactersData[
+                Math.floor(Math.random() * newCharactersData.length)
+              ];
+            setSelectedCharacter(randomCharacter);
           }
         }
       } catch (error) {
@@ -53,12 +59,11 @@ export default function CharacterScrollingCard() {
     };
   }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
     <>
+      <div className="absolute top-[9px] ml-72 flex justify-center">
+        {loading ? <Loading /> : null}
+      </div>
       <div className="star-wars-opening-crawl-effect flex h-[40vh] justify-center">
         <div className="hide-scrollbar mx-auto mt-[-980px] flex w-2/3 flex-wrap justify-center gap-3 overflow-y-scroll scale-90">
           <div className="h-[990px] w-full"></div>
