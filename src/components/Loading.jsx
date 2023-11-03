@@ -7,7 +7,10 @@ export default function Loading() {
   return (
     <>
       <div className={`justify-top flex items-center gap-4`}>
-        <img className="h-20 rotate-270" src="/laser-base-white.png"></img>
+        <img
+          className="h-20 rotate-270"
+          src={`${import.meta.env.BASE_URL}laser-base-white.png`}
+        ></img>
         <motion.div
           initial={{ width: '10px' }}
           animate={[{ width: '1500px' }]}

@@ -24,7 +24,9 @@ export default function CarouselPlanets({ planets }) {
                   p.url.split('/')[5]
                 }.jpg`}
                 onError={(e) => {
-                  e.target.src = '/placeholder-planet.png';
+                  e.target.src = `${
+                    import.meta.env.BASE_URL
+                  }placeholder-planet.png`;
                 }}
                 alt={p.name}
                 key={i}

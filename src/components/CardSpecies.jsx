@@ -35,7 +35,7 @@ export default function CardSpecies({ species = [], isHidden, setIsHidden }) {
               }.jpg`}
               name={specie.name}
               role={specie.classification}
-              fallback="/transport-placeholder.png"
+              fallback={`${import.meta.env.BASE_URL}transport-placeholder.png`}
             />
           </div>
         ))}
