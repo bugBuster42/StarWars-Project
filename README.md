@@ -16,25 +16,25 @@ These instructions will guide you on how to get a copy of the project up and run
 
 1. **Clone the Repository**
 
-    *git clone https://github.com/bugBuster42/StarWars-Project.git*
+    `git clone https://github.com/bugBuster42/StarWars-Project.git`
 
     This command clones the repository to your local machine. 
 
 
 2. **Navigate to the Project Directory**
    
-    *cd StarWars-Project*
+    `cd StarWars-Project`
 
     This moves you into the project folder. 
 
 3. **Install Dependencies**
    
-    *npm install*
+    `npm install`
 
     This command installs all the necessary dependencies required for the project.
 
 6. **Start the Development Server**
    
-    *npm run dev*
+    `npm run dev`
 
     This runs the app in development mode.
