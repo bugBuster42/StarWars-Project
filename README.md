@@ -7,19 +7,17 @@ This project is a web application built using React and Tailwind CSS. It provide
 
 These instructions will guide you on how to get a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+## Prerequisites
 
 - Node.js
 - npm (Node Package Manager)
 
-### Installation
+## Steps
 
 1. **Clone the Repository**
-
-    `git clone https://github.com/bugBuster42/StarWars-Project.git`
-
-    This command clones the repository to your local machine. 
-
+    ```
+    git clone https://github.com/bugBuster42/StarWars-Project.git
+    ```
 
 2. **Navigate to the Project Directory**
    
@@ -33,7 +31,7 @@ These instructions will guide you on how to get a copy of the project up and run
 
     This command installs all the necessary dependencies required for the project.
 
-6. **Start the Development Server**
+4. **Start the Development Server**
    
     `npm run dev`
 
